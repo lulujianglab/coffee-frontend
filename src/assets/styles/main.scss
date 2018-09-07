@@ -6,7 +6,7 @@ body {
   a {
     text-decoration: none;
   }
-  
+
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -56,4 +56,53 @@ body {
   
   .warp-breadcrum{
     margin: 5px 10px 15px 0px;
+  }
+
+  .el-input__inner {
+    color:#f56c6c;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 15px;
+    // margin-left: 70px;
+  }
+  .el-button--primary {
+    width:260px !important;
+    border-radius: 15px;
+    border: none;
+    // margin-left: 70px;
+  }
+  .el-input__inner::-webkit-input-placeholder {
+    color:#f56c6c;
+  }
+  .el-input__inner:-ms-input-placeholder { /* IE10+ */
+    color:#f56c6c;
+  }
+  .el-input__inner:-moz-placeholder { /* Firefox4-18 */
+    color:#f56c6c;
+  }
+  .el-input__inner::-moz-placeholder { /* Firefox19+ */
+    color:#f56c6c;
+  }
+
+  .el-input {
+    margin-bottom: 22px;
+    width: 400px !important;
+    opacity: 0.7;
+  }
+  .el-form-item {
+    margin-bottom: 0;
+  }
+
+  .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    border-color: #fff;
+    background-color: none !important;
+  }
+  .el-checkbox__input.is-checked+.el-checkbox__label{
+    color: #fff;
+  }
+  .el-checkbox__input.is-focus .el-checkbox__inner {
+
+  }
+  .el-checkbox {
+    color: #fff;
   }

@@ -2,10 +2,18 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
 import Homepage from '@/components/Homepage'
-import Dashboard from '@/components/coffee/Dashboard'
-import CoffeeList from '@/components/coffee/CoffeeList'
+import Hot from '@/components/coffee/Hot'
+import Sell from '@/components/coffee/Sell'
+import Person from '@/components/coffee/Person'
+import Area from '@/components/coffee/Area'
+import Autogeneration from '@/components/introduce/Autogeneration'
+import Selectgeneration from '@/components/introduce/Selectgeneration'
+import Dashboard from '@/components/Dashboard'
+// import Register from '@/components//Register'
+
 // 懒加载方式，当路由被访问的时候才加载对应组件
 const Login = resolve => require(['@/components/Login'], resolve)
+const Register = resolve => require(['@/components//Register'], resolve)
 
 Vue.use(Router)
 
@@ -15,6 +23,11 @@ let router = new Router({
       path: '/login',
       name: '登录',
       component: Login
+    },
+    {
+      path: '/register',
+      name: '注册',
+      component: Register
     },
     {
       path: '/',
@@ -30,14 +43,39 @@ let router = new Router({
     },
     {
       path: '/',
+      name: '用户推荐',
       component: Home,
-      name: '用户管理',
       menuShow: true,
-      // leaf: true, // 只有一个节点
+      iconCls: 'iconfont icon-books', // 图标样式class
+      children: [
+        {path: '/introduce/autogeneration', component: Autogeneration, name: '自主推荐', menuShow: true},
+        {path: '/introduce/selectgeneration', component: Selectgeneration, name: '选择推荐', menuShow: true}
+      ]
+    },
+    {
+      path: '/',
+      component: Home,
+      name: '咖啡管理',
+      menuShow: true,
       iconCls: 'iconfont icon-users', // 图标样式class
       children: [
-        {path: '/coffee/dashboard', component: Dashboard, name: '咖啡列表', menuShow: true},
-        {path: '/coffee/list', component: CoffeeList, name: '咖啡分类', menuShow: true},
+        {path: '/coffee/hot', component: Hot, name: '咖啡热度', menuShow: true},
+        {path: '/coffee/sell', component: Sell, name: '咖啡销量', menuShow: true},
+        {path: '/coffee/person', component: Person, name: '咖啡用户', menuShow: true},
+        {path: '/coffee/area', component: Area, name: '咖啡地域', menuShow: true},
+
+      ]
+    },
+    {
+      path: '/',
+      name: 'home',
+      component: Home,
+      redirect: '/homepage',
+      leaf: true, // 只有一个节点
+      menuShow: true,
+      iconCls: 'iconfont icon-setting1', // 图标样式class
+      children: [
+        {path: '/dashboard', component: Dashboard, name: '咖啡总览', menuShow: true}
       ]
     },
     // {
