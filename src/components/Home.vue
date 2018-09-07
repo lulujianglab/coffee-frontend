@@ -54,11 +54,11 @@
             </transition>
           </div>
         </div>
-        <div class="content-bottom">
+        <!-- <div class="content-bottom">
           "Copyright"
           <span class="anticon">©️</span>
           "2018 联通集训第二期第八组出品"
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -271,15 +271,15 @@
 
       .content {
         position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        height: 100%;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-between;
         flex: 1;
-        margin: 24px 24px 0px;
-        overflow: auto;
-        overflow-x: hidden;
+        margin: 24px 24px;
+        // overflow: auto;
+        overflow: hidden;
         transition: .3s;
-        width: 100%;
 
         .grid-content {
           // min-height: 650px;
