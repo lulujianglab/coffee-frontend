@@ -17,21 +17,19 @@
       </div>
       <div class="wrapper-right">
           <div class="container-three">
-            <div class="col-left"> 
                 
-                <div class="name">
-                    <p>抹茶拿铁</p>
-                    <p>抹茶拿铁</p>
-                    <p>抹茶拿铁</p>
-                    <p>抹茶拿铁</p>
-                    <p>抹茶拿铁</p>
-                    <p>抹茶拿铁</p>
-                    <p>抹茶拿铁</p>
-                    <p>抹茶拿铁</p>
-                    <p>抹茶拿铁</p>
-                    <p>抹茶拿铁</p>
-                    <p>抹茶拿铁</p>
-                </div>
+            <div class="col-left">
+                <p>抹茶拿铁</p>
+                <p>抹茶拿铁</p>
+                <p>抹茶拿铁</p>
+                <p>抹茶拿铁</p>
+                <p>抹茶拿铁</p>
+                <p>抹茶拿铁</p>
+                <p>抹茶拿铁</p>
+                <p>抹茶拿铁</p>
+                <p>抹茶拿铁</p>
+                <p>抹茶拿铁</p>
+                <p>抹茶拿铁</p>
             </div>
             
             <div class="col-right">
