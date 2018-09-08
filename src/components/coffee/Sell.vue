@@ -1,23 +1,20 @@
 
 <template>
   <div class="wrapper">
-      <div class="wrapper-top">
-          <div class="image"></div>
-          <div class="container-one">
-              <div id="myChartOne" class="chart-one" :style="{width: '450px', height: '250px'}"></div>
-          </div>
-          <div class="container-two">
-              <div id="myChartTwo" class="chart-two" :style="{width: '200px', height: '250px'}"></div>
-              <div id="myChartThree" class="chart-Three" :style="{width: '200px', height: '250px'}"></div>
-          </div>
-      </div>
-      <div class="wrapper-bottom">
-          <!-- <div id="myChart" class="chart-one" :style="{width: '300px', height: '300px'}"></div> -->
-        <div class="container-three">
-            <div id="myChartFour" class="chart-four" :style="{width: '730px', height: '300px'}"></div>
+      <div class="wrapper-left">       
+        <div class="container-one">
+            <div id="myChartOne" class="chart-one" :style="{width: '350px', height: '250px'}"></div>
         </div>
-        <div class="container-four">
-            <div id="myChartFour" class="chart-four" :style="{width: '400px', height: '350px'}"></div>
+        <div class="container-two">
+            <div id="myChartTwo" class="chart-two" :style="{width: '200px', height: '250px'}"></div>
+            <div id="myChartThree" class="chart-Three" :style="{width: '200px', height: '250px'}"></div>
+        </div>
+      </div>
+      <div class="wrapper-right">
+          <!-- <div id="myChart" class="chart-one" :style="{width: '300px', height: '300px'}"></div> -->
+        <div class="image"></div>
+        <div class="container-three">
+            <div id="myChartFour" class="chart-four" :style="{width: '500px', height: '300px'}"></div>
         </div>
       </div>
       
@@ -43,24 +40,24 @@
       }
     },
     methods: {
-        drawLine(){
-            // 基于准备好的dom，初始化echarts实例
-            let myChart = this.$echarts.init(document.getElementById('myChart'))
-            // 绘制图表
-            myChart.setOption({
-                title: { text: '咖啡销售' },
-                tooltip: {},
-                xAxis: {
-                    data: ["白咖啡","黑咖啡","茶","星冰乐","奶昔","浓咖啡"]
-                },
-                yAxis: {},
-                series: [{
-                    name: '销量',
-                    type: 'bar',
-                    data: [5, 20, 36, 10, 10, 20]
-                }]
-            });
-        },
+        // drawLine(){
+        //     // 基于准备好的dom，初始化echarts实例
+        //     let myChart = this.$echarts.init(document.getElementById('myChart'))
+        //     // 绘制图表
+        //     myChart.setOption({
+        //         title: { text: '咖啡销售' },
+        //         tooltip: {},
+        //         xAxis: {
+        //             data: ["白咖啡","黑咖啡","茶","星冰乐","奶昔","浓咖啡"]
+        //         },
+        //         yAxis: {},
+        //         series: [{
+        //             name: '销量',
+        //             type: 'bar',
+        //             data: [5, 20, 36, 10, 10, 20]
+        //         }]
+        //     });
+        // },
         drawone() {
             var base = +new Date(1968, 9, 3);
             var oneDay = 24 * 3600 * 1000;
@@ -83,7 +80,7 @@
                 },
                 title: {
                     left: 'center',
-                    text: '访问量',
+                    // text: '访问量',
                 },
                 toolbox: {
                     // feature: {
@@ -363,26 +360,26 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   .wrapper {
-    background: url('../../assets/img-sell/background.jpg') repeat;
-    background-size: 100%;
+    background: url('../../assets/img-sell/three.png') no-repeat;
+    background-size: 100% auto;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px 40px;
     
     // justify-content: center;
     // align-items: center;
-    .wrapper-top {
-        height: 250px;
+    .wrapper-left {
+        // height: 250px;
+        width: 400px;
         display: flex;
-        .image {
-            // margin:25px 0;
-            width: 280px;
-            height: 250px;
-            // background: url('../../assets/img-sell/one.png') no-repeat;
-            // background-size: 100%;
-        }
+        flex-direction: column;
+        justify-content: space-between;
+        
 
         .container-one {
             flex: 1;
+            margin-top: -70px;
+            
             // background-color: #fff;
             // margin: 0 20px;
         }
@@ -390,15 +387,24 @@
             flex: 1;
             // background-color: #fff;
             display: flex;
+            // flex-direction: column;
             // justify-content: space-between;
         }
     }
-    .wrapper-bottom {
+    .wrapper-right {
         flex: 1;
         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .image {
+            height: 100px;
+            width: 100%;
+        }
         .container-three {
-            // background-color: #fff;
-            margin: 20px 20px 0 20px        ;  
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;;
+            align-items: center;       ;  
         }
     }
     // .myChart {
