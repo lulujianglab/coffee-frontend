@@ -294,7 +294,7 @@
     background-size: 100% auto;
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px 20px 0;
+    padding: 20px 40px 0px 0;
     
     .wrapper-left {
       padding-top: 100px;

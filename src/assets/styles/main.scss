@@ -106,3 +106,14 @@ body {
   .el-checkbox {
     color: #fff;
   }
+
+  .el-select .el-input__inner:focus {
+    border-color: #f56c6c;
+  }
+
+  .el-select-dropdown__item.selected {
+    color: #f56c6c;
+  }
+  .el-select .el-input.is-focus .el-input__inner {
+    border-color: #f56c6c;
+  }
