@@ -225,25 +225,34 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   .wrapper {
-    // background: url('../../assets/img-autogeneration/background.jpg') repeat;
-    // background-size: cover;
+    background: url('../../assets/img-person/three.png') ;
+    background-size: 100% auto;
     display: flex;
-    justify-content: space-between;
+    
+    padding-top: 50px;
+    padding-left: 40px;
+    padding-bottom: 50px;
+    
+    
     .wrapper-left {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         width: 600px;
         height: 100%;
 
         .image {
-            height: 250px;
+            height:200px;
             width: 100%;
-            background: url('../../assets/img-person/one.png') no-repeat;
-            background-size: contain;
+            // background: url('../../assets/img-person/one.png') no-repeat;
+            // background-size: contain;
         }
 
         .container-one {
             flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             // width: 100%;
         }
 
