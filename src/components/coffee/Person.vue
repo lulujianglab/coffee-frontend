@@ -36,16 +36,16 @@
       drawOne() {
           let myChartOne = this.$echarts.init(document.getElementById('myChartOne'))
           myChartOne.setOption({
-             
+//          color: ['#0a97b','#4674c1',"#fdbf2d","#a5a5a5","#e4dc44"],
             tooltip : {
                 trigger: 'axis',
                 axisPointer : {            // 坐标轴指示器，坐标轴触发有效
                     type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
                 }
             },
-            legend: {
-                data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎','百度','谷歌','必应','其他']
-            },
+//          legend: {
+//              data:['咖啡1','咖啡2','联盟广告','视频广告','搜索引擎','百度','谷歌','必应','其他']
+//          },
             grid: {
                 left: '3%',
                 right: '4%',
@@ -55,7 +55,7 @@
             xAxis : [
                 {
                     type : 'category',
-                    data : ['周一','周二','周三','周四','周五','周六','周日']
+                    data : ['10岁以下','10-20岁','20-30岁','30-40岁','40-50岁','50-60岁','60岁以上']
                 }
             ],
             yAxis : [
@@ -65,32 +65,21 @@
             ],
             series : [
                 {
-                    name:'直接访问',
-                    type:'bar',
-                    data:[320, 332, 301, 334, 390, 330, 320]
+                	name:"奶味咖啡",
+                	type:'bar',
+                	data:[150,200,400,340,347,231,200]
                 },
+                
                 {
-                    name:'邮件营销',
+                    name:'咖啡饮品',
                     type:'bar',
                     stack: '广告',
-                    data:[120, 132, 101, 134, 90, 230, 210]
+                    data:[150, 232, 257, 450, 341, 330, 189]
                 },
                 {
-                    name:'联盟广告',
+                    name:'奶昔',
                     type:'bar',
-                    stack: '广告',
-                    data:[220, 182, 191, 234, 290, 330, 310]
-                },
-                {
-                    name:'视频广告',
-                    type:'bar',
-                    stack: '广告',
-                    data:[150, 232, 201, 154, 190, 330, 410]
-                },
-                {
-                    name:'搜索引擎',
-                    type:'bar',
-                    data:[862, 1018, 964, 1026, 1679, 1600, 1570],
+                    data:[321, 423, 467, 321, 451, 210, 100],
                     markLine : {
                         lineStyle: {
                             normal: {
@@ -102,31 +91,7 @@
                         ]
                     }
                 },
-                {
-                    name:'百度',
-                    type:'bar',
-                    barWidth : 5,
-                    stack: '搜索引擎',
-                    data:[620, 732, 701, 734, 1090, 1130, 1120]
-                },
-                {
-                    name:'谷歌',
-                    type:'bar',
-                    stack: '搜索引擎',
-                    data:[120, 132, 101, 134, 290, 230, 220]
-                },
-                {
-                    name:'必应',
-                    type:'bar',
-                    stack: '搜索引擎',
-                    data:[60, 72, 71, 74, 190, 130, 110]
-                },
-                {
-                    name:'其他',
-                    type:'bar',
-                    stack: '搜索引擎',
-                    data:[62, 82, 91, 84, 109, 110, 120]
-                }
+                
             ]
 
           })
@@ -135,8 +100,7 @@
           let myChartTwo = this.$echarts.init(document.getElementById('myChartTwo'))
           myChartTwo.setOption({
             title : {
-                text: '某站点用户访问来源',
-                subtext: '纯属虚构',
+                text: '男性中的咖啡销量',
                 x:'center'
             },
             tooltip : {
@@ -146,7 +110,7 @@
             legend: {
                 orient: 'vertical',
                 left: 'left',
-                data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+                data: ['摩卡咖啡','卡布奇诺','冰咖啡','拿铁咖啡','其他']
             },
             series : [
                 {
@@ -155,17 +119,17 @@
                     radius : '55%',
                     center: ['50%', '60%'],
                     data:[
-                        {value:335, name:'直接访问'},
-                        {value:310, name:'邮件营销'},
-                        {value:234, name:'联盟广告'},
-                        {value:135, name:'视频广告'},
-                        {value:1548, name:'搜索引擎'}
+                        {value:356, name:'摩卡咖啡'},
+                        {value:310, name:'卡布奇诺'},
+                        {value:234, name:'冰咖啡'},
+                        {value:135, name:'拿铁咖啡'},
+                        {value:1548, name:'其他'}
                     ],
                     itemStyle: {
                         emphasis: {
                             shadowBlur: 10,
                             shadowOffsetX: 0,
-                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            shadowColor: '#0a97b'
                         }
                     }
                 }
@@ -176,8 +140,7 @@
           let myChartThree = this.$echarts.init(document.getElementById('myChartThree'))
           myChartThree.setOption({
               title : {
-                text: '某站点用户访问来源',
-                subtext: '纯属虚构',
+                text: '女性中咖啡销量',
                 x:'center'
             },
             tooltip : {
@@ -187,7 +150,7 @@
             legend: {
                 orient: 'vertical',
                 left: 'left',
-                data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+                data: ['调制咖啡','拿铁咖啡','奶昔饮品','印度奶茶','其他']
             },
             series : [
                 {
@@ -196,11 +159,11 @@
                     radius : '55%',
                     center: ['50%', '60%'],
                     data:[
-                        {value:335, name:'直接访问'},
-                        {value:310, name:'邮件营销'},
-                        {value:234, name:'联盟广告'},
-                        {value:135, name:'视频广告'},
-                        {value:1548, name:'搜索引擎'}
+                        {value:345, name:'调制咖啡'},
+                        {value:213, name:'拿铁咖啡'},
+                        {value:450, name:'奶昔饮品'},
+                        {value:344, name:'印度奶茶'},
+                        {value:1248, name:'其他'}
                     ],
                     itemStyle: {
                         emphasis: {
