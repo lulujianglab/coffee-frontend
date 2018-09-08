@@ -282,7 +282,7 @@
                 },
                 itemStyle: {
                     normal: {
-                        color: '#FF7F24',
+                        color: '#ddb926',
                         position: 'right',
                         show: true
                     }
@@ -322,7 +322,7 @@
                 symbol: 'none',
                 itemStyle: {
                     normal: {
-                        color: '#FF7F24'
+                        color: '#ddb926'
                     }
                 },
 
