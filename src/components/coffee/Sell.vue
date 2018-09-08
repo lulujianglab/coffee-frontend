@@ -40,24 +40,24 @@
       }
     },
     methods: {
-        drawLine(){
-            // 基于准备好的dom，初始化echarts实例
-            let myChart = this.$echarts.init(document.getElementById('myChart'))
-            // 绘制图表
-            myChart.setOption({
-                title: { text: '咖啡销售' },
-                tooltip: {},
-                xAxis: {
-                    data: ["白咖啡","黑咖啡","茶","星冰乐","奶昔","浓咖啡"]
-                },
-                yAxis: {},
-                series: [{
-                    name: '销量',
-                    type: 'bar',
-                    data: [5, 20, 36, 10, 10, 20]
-                }]
-            });
-        },
+        // drawLine(){
+        //     // 基于准备好的dom，初始化echarts实例
+        //     let myChart = this.$echarts.init(document.getElementById('myChart'))
+        //     // 绘制图表
+        //     myChart.setOption({
+        //         title: { text: '咖啡销售' },
+        //         tooltip: {},
+        //         xAxis: {
+        //             data: ["白咖啡","黑咖啡","茶","星冰乐","奶昔","浓咖啡"]
+        //         },
+        //         yAxis: {},
+        //         series: [{
+        //             name: '销量',
+        //             type: 'bar',
+        //             data: [5, 20, 36, 10, 10, 20]
+        //         }]
+        //     });
+        // },
         drawone() {
             var base = +new Date(1968, 9, 3);
             var oneDay = 24 * 3600 * 1000;
