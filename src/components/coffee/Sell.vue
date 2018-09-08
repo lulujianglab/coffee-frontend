@@ -3,18 +3,18 @@
   <div class="wrapper">
       <div class="wrapper-left">       
         <div class="container-one">
-            <div id="myChartOne" class="chart-one" :style="{width: '350px', height: '250px'}"></div>
+            <div id="myChartOne" class="chart-one" :style="{width: '400px', height: '300px'}"></div>
         </div>
         <div class="container-two">
-            <div id="myChartTwo" class="chart-two" :style="{width: '200px', height: '250px'}"></div>
-            <div id="myChartThree" class="chart-Three" :style="{width: '200px', height: '250px'}"></div>
+            <!--<div id="myChartTwo" class="chart-two" :style="{width: '200px', height: '250px'}"></div>-->
+            <div id="myChartThree" class="chart-Three" :style="{width: '600px', height: '350px'}"></div>
         </div>
       </div>
       <div class="wrapper-right">
           <!-- <div id="myChart" class="chart-one" :style="{width: '300px', height: '300px'}"></div> -->
         <div class="image"></div>
-        <div class="container-three">
-            <div id="myChartFour" class="chart-four" :style="{width: '500px', height: '300px'}"></div>
+        <div class="container-three">          
+            <div id="myChartFour" class="chart-four" :style="{width: '600px', height: '450px'}"></div>
         </div>
       </div>
       
@@ -40,35 +40,36 @@
       }
     },
     methods: {
-        // drawLine(){
-        //     // 基于准备好的dom，初始化echarts实例
-        //     let myChart = this.$echarts.init(document.getElementById('myChart'))
-        //     // 绘制图表
-        //     myChart.setOption({
-        //         title: { text: '咖啡销售' },
-        //         tooltip: {},
-        //         xAxis: {
-        //             data: ["白咖啡","黑咖啡","茶","星冰乐","奶昔","浓咖啡"]
-        //         },
-        //         yAxis: {},
-        //         series: [{
-        //             name: '销量',
-        //             type: 'bar',
-        //             data: [5, 20, 36, 10, 10, 20]
-        //         }]
-        //     });
-        // },
+        drawLine(){
+            // 基于准备好的dom，初始化echarts实例
+            let myChart = this.$echarts.init(document.getElementById('myChart'))
+            // 绘制图表
+            myChart.setOption({
+                title: { text: '咖啡销售' },
+                tooltip: {},
+                xAxis: {
+                    data: ["白咖啡","黑咖啡","茶","星冰乐","奶昔","浓咖啡"]
+                },
+                yAxis: {},
+                series: [{
+                    name: '销量',
+                    type: 'bar',
+                    data: [5, 20, 36, 10, 10, 20]
+                }]
+            });
+        },
         drawone() {
-            var base = +new Date(1968, 9, 3);
+        	//最早记录时间
+            var base = +new Date(2010, 9, 1);
             var oneDay = 24 * 3600 * 1000;
             var date = [];
+					//访问量数据
+            var data = [(Math.random()+0.6) * 200];					
 
-            var data = [Math.random() * 300];
-
-            for (var i = 1; i < 20000; i++) {
+            for (var i = 1; i < 3000; i++) {
                 var now = new Date(base += oneDay);
                 date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'));
-                data.push(Math.round((Math.random() - 0.5) * 20 + data[i - 1]));
+                data.push(Math.round((Math.random() - 0.5) * 10 + data[i - 1]));
             }
             let myChartOne = this.$echarts.init(document.getElementById('myChartOne'))
             myChartOne.setOption({
@@ -121,24 +122,27 @@
                 }],
                 series: [
                     {
-                        name:'模拟数据',
+                        name:'访问量数据',
                         type:'line',
                         smooth:true,
                         symbol: 'none',
                         sampling: 'average',
                         itemStyle: {
                             normal: {
-                                color: 'rgb(255, 70, 131)'
+                            	//线条颜色
+                                color: 'rgb(223, 127, 111)'
                             }
                         },
                         areaStyle: {
                             normal: {
                                 color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                     offset: 0,
-                                    color: 'rgb(255, 158, 68)'
+                                    //填充区域颜色
+                                    color: 'rgb(34, 186, 222)'
                                 }, {
                                     offset: 1,
-                                    color: 'rgb(255, 70, 131)'
+                                    //填充区域颜色
+                                    color: 'rgb(166, 50, 222)'
                                 }])
                             }
                         },
@@ -152,206 +156,199 @@
             myChartTwo.setOption({
                 
 
-                title: {
-                    text: '周同比',
-                    left: 'center',
-                    top: 20,
-                    textStyle: {
-                        color: '#ccc'
-                    }
-                },
-
-                tooltip : {
-                    trigger: 'item',
-                    formatter: "{a} <br/>{b} : {c} ({d}%)"
-                },
-
-                visualMap: {
-                    show: false,
-                    min: 80,
-                    max: 600,
-                    inRange: {
-                        colorLightness: [0, 1]
-                    }
-                },
-                series : [
-                    {
-                        name:'访问来源',
-                        type:'pie',
-                        radius : '55%',
-                        center: ['50%', '50%'],
-                        data:[
-                            // {value:335, name:'直接访问'},
-                            {value:310, name:'邮件营销'},
-                            {value:274, name:'联盟广告'},
-                            {value:235, name:'视频广告'},
-                            {value:400, name:'搜索引擎'}
-                        ].sort(function (a, b) { return a.value - b.value; }),
-                        roseType: 'radius',
-                        label: {
-                            normal: {
-                                textStyle: {
-                                    color: 'rgba(255, 255, 255, 0.3)'
-                                }
-                            }
-                        },
-                        labelLine: {
-                            normal: {
-                                lineStyle: {
-                                    color: 'rgba(255, 255, 255, 0.3)'
-                                },
-                                smooth: 0.2,
-                                length: 10,
-                                length2: 20
-                            }
-                        },
-                        itemStyle: {
-                            normal: {
-                                color: '#c23531',
-                                // shadowBlur: 200,
-                                // shadowColor: 'rgba(0, 0, 0, 0.5)'
-                            }
-                        },
-
-                        animationType: 'scale',
-                        animationEasing: 'elasticOut',
-                        animationDelay: function (idx) {
-                            return Math.random() * 200;
-                        }
-                    }
-                ]
+              
             })
         },
         drawthree() {
             let myChartThree = this.$echarts.init(document.getElementById('myChartThree'))
             myChartThree.setOption({
+                 tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        x : 'center',
+        y : 'bottom',
+        data:[]
+    },
+    calculable : true,
+    series : [
+        
+        {
+            name:'销量',
+            type:'pie',
+            radius : [20, 150],
+            roseType : 'area',
+            data:[
+                {value:513928, name:'摩卡星冰乐（不加奶油）'},
+                {value:509893, name:'巧克力碎星冰乐（不加奶油）'},
+                {value:508568, name:'意式浓缩咖啡'},
+                {value:496876, name:'美式咖啡'},
+                {value:486085, name:'摩卡咖啡（不加奶油）'},
+                {value:479179, name:'拿铁咖啡'},
+                {value:470965, name:'(香草)风味拿铁'},
+                {value:456401, name:'焦糖星冰乐（不加奶油）'},
+                {value:447188, name:'卡布奇诺'},
+                {value:417507, name:'丝滑拿铁'},
+                {value:286935, name:'芒果橘子冰沙'},
+                {value:279783, name:'焦糖苹果汁（不加奶油）'},
+                {value:275544, name:'泰舒茶'},
+                {value: 269592, name:'冰咖啡'},
+                {value:267436, name:'巧克力碎星冰乐'},
+                {value:261970, name:' 绿茶拿铁'},
+                {value:257991, name:'摩卡星冰乐'},
+                // {value:2300617, name:'其他'},
                 
-                title: {
-                    text: '日同比',
-                    left: 'center',
-                    top: 20,
-                    textStyle: {
-                        color: '#ccc'
-                    }
-                },
-
-                tooltip : {
-                    trigger: 'item',
-                    formatter: "{a} <br/>{b} : {c} ({d}%)"
-                },
-
-                visualMap: {
-                    show: false,
-                    min: 80,
-                    max: 600,
-                    inRange: {
-                        colorLightness: [0, 1]
-                    }
-                },
-                series : [
-                    {
-                        name:'访问来源',
-                        type:'pie',
-                        radius : '55%',
-                        center: ['50%', '50%'],
-                        data:[
-                            {value:335, name:'直接访问'},
-                            {value:310, name:'邮件营销'},
-                            {value:274, name:'联盟广告'},
-                            {value:235, name:'视频广告'},
-                            {value:400, name:'搜索引擎'},
-                            {value:235, name:'视频广告'},
-                            {value:400, name:'搜索引擎'}
-                        ].sort(function (a, b) { return a.value - b.value; }),
-                        roseType: 'radius',
-                        label: {
-                            normal: {
-                                textStyle: {
-                                    color: 'rgba(255, 255, 255, 0.3)'
-                                }
-                            }
-                        },
-                        labelLine: {
-                            normal: {
-                                lineStyle: {
-                                    color: 'rgba(255, 255, 255, 0.3)'
-                                },
-                                smooth: 0.2,
-                                length: 10,
-                                length2: 20
-                            }
-                        },
-                        itemStyle: {
-                            normal: {
-                                color: '#c23531',
-                                // shadowBlur: 200,
-                                // shadowColor: 'rgba(0, 0, 0, 0.5)'
-                            }
-                        },
-
-                        animationType: 'scale',
-                        animationEasing: 'elasticOut',
-                        animationDelay: function (idx) {
-                            return Math.random() * 200;
-                        }
-                    }
-                ]
+            ]
+        }
+    ]
+                
             })
         },
+        
+              
         drawfour() {
             let myChartFour = this.$echarts.init(document.getElementById('myChartFour'))
             myChartFour.setOption({
-
-                // color: ['#3398DB'],
-                tooltip : {
-                    trigger: 'axis',
-                    axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                        type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-                    }
-                },
-                grid: {
-                    left: '3%',
-                    right: '4%',
-                    bottom: '3%',
-                    containLabel: true
-                },
-                xAxis : [
-                    {
-                        type : 'category',
-                        data : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                        axisTick: {
-                            alignWithLabel: true
-                        },
-                        // show: false
-                        splitLine:{
-						　　　　show:false
-						　　}
-                    }
-                ],
-                yAxis : [
-                    {
-                        type : 'value',
-                        // show: false
-                        splitLine:{
-						　　　　show:false
-						　　}
-                    }
-                ],
-                series : [
-                    {
-                        name:'直接访问',
-                        type:'bar',
-                        barWidth: '60%',
-                        data:[10, 52, 200, 334, 390, 330, 220]
-                    }
-                ]
+							     tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data: ['经典浓缩饮品', '咖啡饮品','咖啡混合星冰乐','奶味咖啡星冰乐','咖啡轻混合星冰乐','冰摇饮品','招牌浓缩饮品','奶昔饮品','泰舒茶饮品']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis:  {
+        type: 'category',
+        data: ['一月','二月','三月']
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [
+        {
+            name: '经典浓缩饮品',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [554453, 527101, 549124]
+        },
+        {
+            name: '咖啡饮品',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [569073, 596320, 510297]
+        },
+        {
+            name: '咖啡混合星冰乐',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [230458, 239444, 240708]
+        },
+        {
+            name: '奶味咖啡星冰乐',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [257803, 226163, 285646]
+        },
+        {
+            name: '咖啡轻混合星冰乐',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [268433, 237569, 243109]
+        },
+        {
+            name: '冰摇饮品',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [262012, 221669, 260424]
+        },
+        {
+            name: '招牌浓缩饮品',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [233848, 252678, 228465]
+        },
+        {
+            name: '奶昔饮品',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [254668, 262252, 245291]
+        },
+        {
+            name: '泰舒茶饮品',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [425087, 414906, 389457]
+        }
+    ]
             })
         }
     },
     mounted() {
     //   this.drawLine();
     this.drawone()
-    this.drawtow()
+//  this.drawtow()
     this.drawthree()
     this.drawfour()
     }
@@ -376,7 +373,7 @@
         justify-content: space-between;
         
 
-        .container-one {
+       .container-one {
             flex: 1;
             margin-top: -70px;
             
@@ -386,6 +383,9 @@
         .container-two {
             flex: 1;
             // background-color: #fff;
+            width: 1000px;
+            height: 3000px;
+            margin-bottom: 50px;
             display: flex;
             // flex-direction: column;
             // justify-content: space-between;
@@ -404,7 +404,9 @@
             flex: 1;
             display: flex;
             justify-content: flex-end;;
-            align-items: center;       ;  
+            align-items: center;       
+            margin-bottom: -100px;  
+            margin-right: 80px;
         }
     }
     // .myChart {

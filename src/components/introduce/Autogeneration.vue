@@ -35,31 +35,19 @@
       drawOne() {
         let myChartOne = this.$echarts.init(document.getElementById('myChartOne'))
         var rawData = [
-          {name: ' 团中央 ', value:  104 },
-          {name: ' 山东 ', value:  51 },
-          {name: ' 江西 ', value:  32 },
-          {name: ' 云南 ', value:  8 },
-          {name: ' 福建 ', value:  7 },
-          {name: ' 江苏 ', value:  6 },
-          {name: ' 广西 ', value:  6 },
-          {name: ' 湘 ', value:  5 },
-          {name: ' 重庆 ', value:  4 },
-          {name: ' 晋 ', value:  4 },
-          {name: ' 川 ', value:  3 },
-          {name: ' 宁夏 ', value:  3 },
-          {name: ' 海南 ', value:  1 },
-          {name: ' 内蒙古 ', value:  1 },
-          {name: ' 青海 ', value:  1 },
-          {name: ' 辽宁 ', value:  1 },
-          {name: ' 湖北 ', value:  1 },
-          {name: ' 心理服务联盟 ', value:  1 },
-          {name: ' 河北 ', value:  1 },
-          {name: ' 特色平台 ', value:  1 },
+          {name: '脂肪7g ', value:  7 },
+          {name: '反式脂肪3.5g ', value:  3.5 },
+          {name: ' 饱和脂肪0.2g ', value:  0.2 },
+          {name: ' 膳食纤维0g ', value:  0 },
+          {name: ' 糖17g ', value:  17 },
+          {name: ' 蛋白质12g ', value:  12 },
+          {name: ' 咖啡因0.15g ', value:  0.15 },
+          
         ]
         myChartOne.setOption({
            
           title: {
-              text: '白咖啡',
+              text: '拿铁咖啡',
               left: 'center'
           },
           tooltip: {},
@@ -118,30 +106,18 @@
       drawTwo() {
         let myChartTwo = this.$echarts.init(document.getElementById('myChartTwo'))
         var rawData = [
-          {name: ' 团中央 ', value:  104 },
-          {name: ' 山东 ', value:  51 },
-          {name: ' 江西 ', value:  32 },
-          {name: ' 云南 ', value:  8 },
-          {name: ' 福建 ', value:  7 },
-          {name: ' 江苏 ', value:  6 },
-          {name: ' 广西 ', value:  6 },
-          {name: ' 湘 ', value:  5 },
-          {name: ' 重庆 ', value:  4 },
-          {name: ' 晋 ', value:  4 },
-          {name: ' 川 ', value:  3 },
-          {name: ' 宁夏 ', value:  3 },
-          {name: ' 海南 ', value:  1 },
-          {name: ' 内蒙古 ', value:  1 },
-          {name: ' 青海 ', value:  1 },
-          {name: ' 辽宁 ', value:  1 },
-          {name: ' 湖北 ', value:  1 },
-          {name: ' 心理服务联盟 ', value:  1 },
-          {name: ' 河北 ', value:  1 },
-          {name: ' 特色平台 ', value:  1 },
+          {name: '脂肪 ', value:  4 },
+          {name: '反式脂肪 ', value:  2 },
+          {name: ' 饱和脂肪 ', value:  0.1 },
+          {name: ' 膳食纤维 ', value:  1 },
+          {name: ' 糖 ', value:  17 },
+          {name: ' 蛋白质 ', value:  6 },
+          {name: ' 咖啡因 ', value:  0.085 },
+         
         ]
         myChartTwo.setOption({
           title: {
-            text: '美式拿铁',
+            text: '摩卡星冰乐（不加奶油）',
             left: 'center'
           },
           tooltip: {},
@@ -200,30 +176,18 @@
       drawThree() {
         let myChartThree = this.$echarts.init(document.getElementById('myChartThree'))
         var rawData = [
-          {name: ' 团中央 ', value:  104 },
-          {name: ' 山东 ', value:  51 },
-          {name: ' 江西 ', value:  32 },
-          {name: ' 云南 ', value:  8 },
-          {name: ' 福建 ', value:  7 },
-          {name: ' 江苏 ', value:  6 },
-          {name: ' 广西 ', value:  6 },
-          {name: ' 湘 ', value:  5 },
-          {name: ' 重庆 ', value:  4 },
-          {name: ' 晋 ', value:  4 },
-          {name: ' 川 ', value:  3 },
-          {name: ' 宁夏 ', value:  3 },
-          {name: ' 海南 ', value:  1 },
-          {name: ' 内蒙古 ', value:  1 },
-          {name: ' 青海 ', value:  1 },
-          {name: ' 辽宁 ', value:  1 },
-          {name: ' 湖北 ', value:  1 },
-          {name: ' 心理服务联盟 ', value:  1 },
-          {name: ' 河北 ', value:  1 },
-          {name: ' 特色平台 ', value:  1 },
+          {name: '脂肪 ', value:  10 },
+          {name: '反式脂肪 ', value:  5 },
+          {name: ' 饱和脂肪 ', value:  0.3 },
+          {name: ' 膳食纤维 ', value:  2 },
+          {name: ' 糖 ', value:  71 },
+          {name: ' 蛋白质 ', value:  17 },
+          {name: ' 咖啡因 ', value:  0.11 },
+          
         ]
         myChartThree.setOption({
           title: {
-            text: '抹茶拿铁',
+            text: '绿茶拿铁',
             left: 'center'
           },
           tooltip: {},
@@ -290,11 +254,11 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   .wrapper {
-    background: url('../../assets/img-autogeneration/three.png') no-repeat;
+    background: url('../../assets/img-autogeneration/three.png');
     background-size: 100% auto;
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px 0px 0;
+    padding: 20px 40px 20px 0;
     
     .wrapper-left {
       padding-top: 100px;
@@ -312,13 +276,22 @@
       align-items: flex-end;
       // padding-left: 20px;
 
-      .container-two {
+			.container-one{
+				margin-left: 50px;
+				margin-top: 100px;
+			}
+
+       .container-two {
+      	margin-top: 20px;
+      	margin-right: 50px;
         height: 260px;
         // width: 100%;
         padding-right: 200px;
       }
       .container-three {
         flex: 1;
+        margin-top: 80px;
+        margin-right: 50px;
         display: flex;
         // justify-content: flex-start;
         // align-items: flex-start;
