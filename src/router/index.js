@@ -29,18 +29,18 @@ let router = new Router({
       name: '注册',
       component: Register
     },
-    {
-      path: '/',
-      name: 'home',
-      component: Home,
-      redirect: '/homepage',
-      leaf: true, // 只有一个节点
-      menuShow: true,
-      iconCls: 'iconfont icon-home', // 图标样式class
-      children: [
-        {path: '/homepage', component: Homepage, name: '首页', menuShow: true}
-      ]
-    },
+    // {
+    //   path: '/',
+    //   name: 'home',
+    //   component: Home,
+    //   redirect: '/homepage',
+    //   leaf: true, // 只有一个节点
+    //   menuShow: true,
+    //   iconCls: 'iconfont icon-home', // 图标样式class
+    //   children: [
+    //     {path: '/homepage', component: Homepage, name: '首页', menuShow: true}
+    //   ]
+    // },
     {
       path: '/',
       name: '用户推荐',
@@ -77,29 +77,7 @@ let router = new Router({
       children: [
         {path: '/dashboard', component: Dashboard, name: '咖啡总览', menuShow: true}
       ]
-    },
-    // {
-    //   path: '/',
-    //   component: Home,
-    //   name: '图书管理',
-    //   menuShow: true,
-    //   iconCls: 'iconfont icon-books',
-    //   children: [
-    //     {path: '/book/list', component: BookList, name: '图书列表', menuShow: true},
-    //     {path: '/book/category', component: BookCategoryList, name: '图书分类', menuShow: true}
-    //   ]
-    // },
-    // {
-    //   path: '/',
-    //   component: Home,
-    //   name: '设置',
-    //   menuShow: true,
-    //   iconCls: 'iconfont icon-setting1',
-    //   children: [
-    //     {path: '/user/profile', component: UserProfile, name: '个人信息', menuShow: true},
-    //     {path: '/user/changepwd', component: UserChangePwd, name: '修改密码', menuShow: true}
-    //   ]
-    // }
+    }
   ]
 })
 
@@ -112,12 +90,32 @@ router.beforeEach((to, from, next) => {
   } else {
     // let user = JSON.parse(window.localStorage.getItem('access-user'))
     let user = window.localStorage.getItem('access-user')
+    // let register = window.localStorage.getItem('register')
     if (!user) {
-      next({path: '/login'})
-    } else {
+      next({path: '/login'})  
+    }else {
       next()
     }
   }
 })
+// router.beforeEach((to, from, next) => {
+//   console.log('to:' + to.path)
+//   if (to.path.startsWith('/login')) {
+//     console.log(11)
+//     window.localStorage.removeItem('access-user')
+//     next()
+//   } else {
+//     // let user = JSON.parse(window.localStorage.getItem('access-user'))
+//     let user = window.localStorage.getItem('access-user')
+//     let register = window.localStorage.getItem('register')
+//     if (!user && !register) {
+//       next({path: '/register'})  
+//     } else if(!user) {
+//       next({path: '/login'})
+//     }else {
+//       next()
+//     }
+//   }
+// })
 
 export default router

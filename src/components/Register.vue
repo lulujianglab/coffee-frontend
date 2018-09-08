@@ -58,6 +58,7 @@
     data() {
       return {
         loading: false,
+        register: '',
         account: {
           username: 'admin',
           pwd: '123456',
@@ -127,6 +128,7 @@
     //   },
       handleLogin() {
         this.$router.push({path: '/login'});
+        localStorage.setItem('register', 'true');
       }
     }
   }
