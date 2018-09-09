@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style>
-body{
+html,body{
   padding:0px;
   margin:0px auto;
   height: 100%;
@@ -40,5 +40,8 @@ img {
   color: #2c3e50;
   height: 100%;
   /* margin-top: 60px; */
+}
+ol, ul {
+  list-style: none;
 }
 </style>

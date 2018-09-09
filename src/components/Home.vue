@@ -47,13 +47,13 @@
 
       </div>
       <div class="content">
-        <div class="grid-content bg-purple-light">
+        <!-- <div class="grid-content bg-purple-light"> -->
           <div class="content-wrapper">
             <transition name="fade" mode="out-in">
               <router-view></router-view>
             </transition>
           </div>
-        </div>
+        <!-- </div> -->
         <!-- <div class="content-bottom">
           "Copyright"
           <span class="anticon">©️</span>
@@ -140,7 +140,8 @@
   .wrapper {
     display: flex;
     background-color: #f0f2f5;
-    height: 100vh;
+    // height: 100vh;
+    height: 100%;
 
     .wrapper-left {
       max-width: 256px;
@@ -285,6 +286,9 @@
           // min-height: 650px;
           
         }
+        .content-wrapper {
+          height: 100%;
+        }
         .content-bottom {
           color: rgba(0, 0, 0, 0.45);
           font-size: 14px;
@@ -298,8 +302,7 @@
             vertical-align: -.125em;
           } 
         }
-      }
-      
+      }      
     }
   }
 </style>

@@ -2,16 +2,16 @@
   <div class="wrapper">
       <div class="wrapper-left">
         <div class="container-one">
-            <div id="myChartOne" class="chart-one" :style="{width: '500px', height: '400px'}"></div>
+            <div id="myChartOne" class="chart-one" :style="{width: '450px', height: '450px'}"></div>
         </div>
       </div>
       <div class="wrapper-right">
         <div class="container-two">
-            <div id="myChartTwo" class="chart-one" :style="{width: '400px', height: '280px'}"></div>
+            <div id="myChartTwo" class="chart-two" :style="{width: '400px', height: '280px'}"></div>
         </div>
         <div class="container-three">
             <div class="image"></div>
-            <div id="myChartThree" class="chart-one" :style="{width: '400px', height: '350px'}"></div>
+            <div id="myChartThree" class="chart-three" :style="{width: '400px', height: '350px'}"></div>
         </div>
       </div>
   </div>
@@ -257,55 +257,41 @@
     background: url('../../assets/img-autogeneration/three.png');
     background-size: 100% auto;
     display: flex;
-    justify-content: space-between;
-    padding: 20px 40px 20px 0;
+    // justify-content: space-between;
     
     .wrapper-left {
-      padding-top: 100px;
-      width: 500px;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
+      padding-top: 120px;
+      flex: 1;
+
+      .container-one{
+        margin-top: 120px;
+      }
     }
     .wrapper-right {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      align-items: flex-end;
-      // padding-left: 20px;
-
-			.container-one{
-				margin-left: 50px;
-				margin-top: 100px;
-			}
-
+          
        .container-two {
       	margin-top: 20px;
-      	margin-right: 50px;
-        height: 260px;
-        // width: 100%;
-        padding-right: 200px;
+      	margin-left: 20px;
+        height: 40%;
       }
       .container-three {
         flex: 1;
-        margin-top: 80px;
-        margin-right: 50px;
+        margin-top: 40px;
         display: flex;
-        // justify-content: flex-start;
-        // align-items: flex-start;
         
-
         .image {
           width: 180px;
           height: 200px;
           background: url('../../assets/img-autogeneration/two.png') no-repeat;
           background-size: contain;
         }
-        .chart-one {
-          flex: 1;
-        }
+        // .chart-three {
+        //   flex: 1;
+        // }
       }
     }
   }

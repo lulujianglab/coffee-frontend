@@ -1,5 +1,13 @@
 <template>
   <div class="container">
+    <div v-if="condition">
+      <div class="mask">
+      <div class="actionsheet">
+        <p>恭喜注册成功</p>
+        <a href="/login">确定</a>        
+      </div>
+    </div>
+    </div>
     <h5 class="small" @click="handleLogin">已有账号，马上登陆</h5>
     <div class="register-layout">
     <el-form ref="AccountFrom" :model="account" :rules="rules" label-position="left" label-width="0px"
@@ -43,7 +51,7 @@
     </el-select>
     <el-checkbox v-model="checked" checked class="remember">温馨提示：代表您已同意<a href="#">《用户服务协议》</a>、<a href="#">《隐私政策》</a></el-checkbox>
     <el-form-item style="width:100%;">
-      <el-button type="primary" style="width:100%;background:#fff;color:#b26767;font-size:20px;font-family:'Kaiti SC';font-weight:900;" @click.native.prevent="handleLogin" :loading="loading">立即注册</el-button>
+      <el-button type="primary" style="width:100%;background:#fff;color:#b26767;font-size:20px;font-family:'Kaiti SC';font-weight:900;" @click.native.prevent="handleCheck" :loading="loading">立即注册</el-button>
     </el-form-item>
     <!-- <p class="small" @click.native.prevent="handleLogin">立即注册</p> -->
   </el-form>
@@ -57,6 +65,7 @@
   export default {
     data() {
       return {
+        condition: false,
         loading: false,
         register: '',
         account: {
@@ -115,20 +124,11 @@
       };
     },
     methods: {
-    //   handleLogin() {
-    //     let that = this;
-    //     this.$refs.AccountFrom.validate((valid) => {
-    //       if (valid) {
-    //         this.loading = true;
-    //         let loginParams = {username: this.account.username, pwd: this.account.pwd};
-    //             localStorage.setItem('access-user', 'zhangshan');
-    //             that.$router.push({path: '/'});
-    //       }
-    //     });
-    //   },
-      handleLogin() {
+      handleLogin() {  
         this.$router.push({path: '/login'});
-        localStorage.setItem('register', 'true');
+      },
+      handleCheck() {
+        this.condition = true
       }
     }
   }
@@ -145,11 +145,43 @@
 </style>
 <style lang="scss" scoped>
     .container {
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-        background: url('../assets/img-register/background.jpg') repeat;
-        background-size: 100%;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background: url('../assets/img-register/background.jpg') repeat;
+      background-size: 100%;
+
+      .mask {
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+
+        .actionsheet {
+          margin-top: 30px;
+          width: 500px;
+          height: 600px;
+          
+          background: url('../assets/img-register/image.png') no-repeat;
+          background-size: 100% auto;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          font-weight: 900;
+          font-size: 40px;
+          font-family:'Kaiti SC';
+          padding-top: 20px;
+        } 
+        
+      }
     }
     .register-layout {
         display: flex;

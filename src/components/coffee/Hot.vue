@@ -17,22 +17,31 @@
       </div>
       <div class="wrapper-right">
           <div class="container-three">
-                
-            <div class="col-left">
-                <p>抹茶拿铁</p>
-                <p>抹茶拿铁</p>
-                <p>抹茶拿铁</p>
-                <p>抹茶拿铁</p>
-                <p>抹茶拿铁</p>
-                <p>抹茶拿铁</p>
-                <p>抹茶拿铁</p>
-                <p>抹茶拿铁</p>
-                <p>抹茶拿铁</p>
-                <p>抹茶拿铁</p>
-                <p>抹茶拿铁</p>
-            </div>
+            <ul class="col-left">
+                <li>
+                    <span class="circle">1</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">1</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">1</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">1</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+            </ul>
             
             <div class="col-right">
+                <!-- <p>323,234</p>
                 <p>323,234</p>
                 <p>323,234</p>
                 <p>323,234</p>
@@ -42,12 +51,11 @@
                 <p>323,234</p>
                 <p>323,234</p>
                 <p>323,234</p>
-                <p>323,234</p>
-                <p>323,234</p>
+                <p>323,234</p> -->
             </div>
         </div>
         <div class="container-four">
-            <div class="col-left">
+            <!-- <div class="col-left">
                 <p>焦糖拿铁</p>
                 <p>焦糖拿铁</p>
                 <p>焦糖拿铁</p>
@@ -72,7 +80,7 @@
                 <p>323,234</p>
                 <p>323,234</p>
                 <p>323,234</p>
-            </div>
+            </div> -->
         </div>
       </div>
   </div>
@@ -187,12 +195,10 @@
         flex: 1;
         display: flex;
         flex-direction: column;
-        // justify-content: space-between;
-        align-items: flex-start;
         padding-top: 80px;
         .container-one {
             height: 200px;
-            width: 500px;
+            width: 50%;
         }
         .container-two {
             flex: 1;
@@ -201,25 +207,58 @@
     .wrapper-right {
         flex: 1;
         display: flex;
-        justify-content: flex-start;
-        // align-self: center;
+        // justify-content: flex-start;
 
-        .container-three,
-        .container-four {
-            flex: 1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-right: 40px;
-            .col-left {
-                .image {
-                    width: 18px;
-                    height: 18px;
-                    background: url('../../assets/img-hot/ax.png') no-repeat;
-                    background-size: 100% auto;
-                }
-            }
+        // .container-three,
+        // .container-four {
+        //     flex: 1;
+        //     display: flex;
+        //     justify-content: space-between;
+        //     align-items: center;
+        //     padding-right: 40px;
+        //     .col-left {
+        //         .image {
+        //             width: 18px;
+        //             height: 18px;
+        //             background: url('../../assets/img-hot/ax.png') no-repeat;
+        //             background-size: 100% auto;
+        //         }
+        //     }
             
+        // }
+        .container-three {
+            margin: 130px 0 0;
+
+            .circle {
+                background-color: #314659;
+                color: #fff;
+                border-radius: 20px;
+                display: inline-block;
+                font-size: 12px;
+                font-weight: 600;
+                height: 20px;
+                line-height: 20px;
+                margin-right: 16px;
+                margin-top: 1.5px;
+                text-align: center;
+                width: 20px;
+                
+            }
+            .name {
+                flex: 1;
+                margin-right: 8px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                color: rgba(0, 0, 0, 0.65);
+                font-size: 14px;
+                line-height: 22px;
+            }
+            .num {
+                color: rgba(0, 0, 0, 0.65);
+                font-size: 14px;
+                line-height: 22px;
+            }
         }
     }
   }

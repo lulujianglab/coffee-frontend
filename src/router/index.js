@@ -29,18 +29,18 @@ let router = new Router({
       name: '注册',
       component: Register
     },
-    // {
-    //   path: '/',
-    //   name: 'home',
-    //   component: Home,
-    //   redirect: '/homepage',
-    //   leaf: true, // 只有一个节点
-    //   menuShow: true,
-    //   iconCls: 'iconfont icon-home', // 图标样式class
-    //   children: [
-    //     {path: '/homepage', component: Homepage, name: '首页', menuShow: true}
-    //   ]
-    // },
+    {
+      path: '/',
+      name: 'home',
+      component: Home,
+      redirect: '/homepage',
+      leaf: true, // 只有一个节点
+      menuShow: true,
+      iconCls: 'iconfont icon-home', // 图标样式class
+      children: [
+        {path: '/homepage', component: Homepage, name: '首页', menuShow: true}
+      ]
+    },
     {
       path: '/',
       name: '用户推荐',
@@ -83,39 +83,50 @@ let router = new Router({
 
 router.beforeEach((to, from, next) => {
   console.log('to:' + to.path)
-  if (to.path.startsWith('/login')) {
-    console.log(11)
-    window.localStorage.removeItem('access-user')
+  if (to.path === '/login' || to.path === '/register') {
+    console.log(55)
     next()
   } else {
-    // let user = JSON.parse(window.localStorage.getItem('access-user'))
-    let user = window.localStorage.getItem('access-user')
-    // let register = window.localStorage.getItem('register')
-    if (!user) {
-      next({path: '/login'})  
-    }else {
+    if (to.path.startsWith('/login')) {
+      window.localStorage.removeItem('access-user')
       next()
+    } else {
+      // let user = JSON.parse(window.localStorage.getItem('access-user'))
+      let user = window.localStorage.getItem('access-user')
+      if (!user) {
+        next({path: '/login'})  
+      }else {
+        next()
+      }
     }
   }
 })
+
 // router.beforeEach((to, from, next) => {
 //   console.log('to:' + to.path)
-//   if (to.path.startsWith('/login')) {
-//     console.log(11)
-//     window.localStorage.removeItem('access-user')
+//   if (to.path === '/login' || to.path === '/register') {
+//     console.log(55)
 //     next()
 //   } else {
-//     // let user = JSON.parse(window.localStorage.getItem('access-user'))
-//     let user = window.localStorage.getItem('access-user')
-//     let register = window.localStorage.getItem('register')
-//     if (!user && !register) {
-//       next({path: '/register'})  
-//     } else if(!user) {
-//       next({path: '/login'})
-//     }else {
+//     if (to.path.startsWith('/login')) {
+//       console.log(11)
+//       window.localStorage.removeItem('access-user')
 //       next()
+//     } else {
+//       console.log(33)
+//       // let user = JSON.parse(window.localStorage.getItem('access-user'))
+//       let user = window.localStorage.getItem('access-user')
+//       let register = window.localStorage.getItem('register')
+//       if (!user && !register) {
+//         next({path: '/register'})  
+//       } else if(!user) {
+//         next({path: '/login'})
+//       }else {
+//         next()
+//       }
 //     }
 //   }
+
 // })
 
 export default router
