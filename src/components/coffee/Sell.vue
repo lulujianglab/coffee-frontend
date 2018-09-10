@@ -6,15 +6,12 @@
             <div id="myChartOne" class="chart-one" :style="{width: '400px', height: '300px'}"></div>
         </div>
         <div class="container-two">
-            <!--<div id="myChartTwo" class="chart-two" :style="{width: '200px', height: '250px'}"></div>-->
-            <div id="myChartThree" class="chart-Three" :style="{width: '600px', height: '350px'}"></div>
+            <div id="myChartThree" class="chart-Three" :style="{width: '450px', height: '350px'}"></div>
         </div>
       </div>
       <div class="wrapper-right">
-          <!-- <div id="myChart" class="chart-one" :style="{width: '300px', height: '300px'}"></div> -->
-        <div class="image"></div>
         <div class="container-three">          
-            <div id="myChartFour" class="chart-four" :style="{width: '600px', height: '450px'}"></div>
+            <div id="myChartFour" class="chart-four" :style="{width: '580px', height: '450px'}"></div>
         </div>
       </div>
       
@@ -151,62 +148,52 @@
                 ]
             })
         },
-        drawtow() {
-            let myChartTwo = this.$echarts.init(document.getElementById('myChartTwo'))
-            myChartTwo.setOption({
-                
-
-              
-            })
-        },
         drawthree() {
             let myChartThree = this.$echarts.init(document.getElementById('myChartThree'))
             myChartThree.setOption({
-                 tooltip : {
-        trigger: 'item',
-        formatter: "{a} <br/>{b} : {c} ({d}%)"
-    },
-    legend: {
-        x : 'center',
-        y : 'bottom',
-        data:[]
-    },
-    calculable : true,
-    series : [
-        
-        {
-            name:'销量',
-            type:'pie',
-            radius : [20, 150],
-            roseType : 'area',
-            data:[
-                {value:513928, name:'摩卡星冰乐（不加奶油）'},
-                {value:509893, name:'巧克力碎星冰乐（不加奶油）'},
-                {value:508568, name:'意式浓缩咖啡'},
-                {value:496876, name:'美式咖啡'},
-                {value:486085, name:'摩卡咖啡（不加奶油）'},
-                {value:479179, name:'拿铁咖啡'},
-                {value:470965, name:'(香草)风味拿铁'},
-                {value:456401, name:'焦糖星冰乐（不加奶油）'},
-                {value:447188, name:'卡布奇诺'},
-                {value:417507, name:'丝滑拿铁'},
-                {value:286935, name:'芒果橘子冰沙'},
-                {value:279783, name:'焦糖苹果汁（不加奶油）'},
-                {value:275544, name:'泰舒茶'},
-                {value: 269592, name:'冰咖啡'},
-                {value:267436, name:'巧克力碎星冰乐'},
-                {value:261970, name:' 绿茶拿铁'},
-                {value:257991, name:'摩卡星冰乐'},
-                // {value:2300617, name:'其他'},
-                
-            ]
-        }
-    ]
-                
+                tooltip : {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    x : 'center',
+                    y : 'bottom',
+                    data:[]
+                },
+                calculable : true,
+                series : [
+                    
+                    {
+                        name:'销量',
+                        type:'pie',
+                        radius : [20, 150],
+                        roseType : 'area',
+                        data:[
+                            {value:513928, name:'摩卡星冰乐（不加奶油）'},
+                            {value:509893, name:'巧克力碎星冰乐（不加奶油）'},
+                            {value:508568, name:'意式浓缩咖啡'},
+                            {value:496876, name:'美式咖啡'},
+                            {value:486085, name:'摩卡咖啡（不加奶油）'},
+                            {value:479179, name:'拿铁咖啡'},
+                            {value:470965, name:'(香草)风味拿铁'},
+                            {value:456401, name:'焦糖星冰乐（不加奶油）'},
+                            {value:447188, name:'卡布奇诺'},
+                            {value:417507, name:'丝滑拿铁'},
+                            {value:286935, name:'芒果橘子冰沙'},
+                            {value:279783, name:'焦糖苹果汁（不加奶油）'},
+                            {value:275544, name:'泰舒茶'},
+                            {value: 269592, name:'冰咖啡'},
+                            {value:267436, name:'巧克力碎星冰乐'},
+                            {value:261970, name:' 绿茶拿铁'},
+                            {value:257991, name:'摩卡星冰乐'},
+                            // {value:2300617, name:'其他'},
+                            
+                        ]
+                    }
+                ]           
             })
         },
-        
-              
+                      
         drawfour() {
             let myChartFour = this.$echarts.init(document.getElementById('myChartFour'))
             myChartFour.setOption({
@@ -361,12 +348,9 @@
     background-size: 100% auto;
     display: flex;
     justify-content: space-between;
-    padding: 50px 40px;
-    
-    // justify-content: center;
-    // align-items: center;
+    // padding: 50px 0px;
     .wrapper-left {
-        // height: 250px;
+        flex: 1;
         width: 400px;
         display: flex;
         flex-direction: column;
@@ -376,41 +360,26 @@
        .container-one {
             flex: 1;
             margin-top: -70px;
-            
-            // background-color: #fff;
-            // margin: 0 20px;
         }
-        .container-two {
+        .container-two {    
+            margin-left: 40px;
             flex: 1;
-            // background-color: #fff;
             width: 1000px;
             height: 3000px;
             margin-bottom: 50px;
             display: flex;
-            // flex-direction: column;
-            // justify-content: space-between;
         }
     }
     .wrapper-right {
+        padding-top: 240px;
         flex: 1;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        .image {
-            height: 100px;
-            width: 100%;
-        }
         .container-three {
             flex: 1;
             display: flex;
-            justify-content: flex-end;;
+            // justify-content: flex-end;
             align-items: center;       
-            margin-bottom: -100px;  
-            margin-right: 80px;
         }
     }
-    // .myChart {
-    //     margin-top: 400px;
-    // }
   }
 </style>

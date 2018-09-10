@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
       <div class="wrapper-left">
-          <div class="image"></div>
+          <!-- <div class="image"></div> -->
           <div class="container-one">
               <div id="myChartOne" class="chart-one" :style="{width: '600px', height: '350px'}"></div>
           </div>
@@ -191,32 +191,20 @@
     background: url('../../assets/img-person/four.png') ;
     background-size: 100% auto;
     display: flex;
-    
+    justify-content: space-between;
     padding-top: 50px;
-    padding-left: 40px;
+    // padding-left: 40px;
     padding-bottom: 50px;
     
     
     .wrapper-left {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 600px;
-        height: 100%;
-
-        .image {
-            height:200px;
-            width: 100%;
-            // background: url('../../assets/img-person/one.png') no-repeat;
-            // background-size: contain;
-        }
+        flex: 1;
 
         .container-one {
+            padding-top: 200px;
             flex: 1;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            // width: 100%;
         }
 
     }
@@ -224,6 +212,7 @@
     .wrapper-right {
         display: flex;
         flex-direction: column;
+        margin-left: 60px;
         align-items: flex-end;
         flex: 1;
 

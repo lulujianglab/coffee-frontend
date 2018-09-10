@@ -19,68 +19,130 @@
           <div class="container-three">
             <ul class="col-left">
                 <li>
-                    <span class="circle">1</span>
+                    <span class="circle is-active">1</span>
                     <span class="name">抹茶拿铁</span>
                     <span class="num">323,234</span>
                 </li>
                 <li>
-                    <span class="circle">1</span>
+                    <span class="circle is-active">2</span>
                     <span class="name">抹茶拿铁</span>
                     <span class="num">323,234</span>
                 </li>
                 <li>
-                    <span class="circle">1</span>
+                    <span class="circle is-active">3</span>
                     <span class="name">抹茶拿铁</span>
                     <span class="num">323,234</span>
                 </li>
                 <li>
-                    <span class="circle">1</span>
+                    <span class="circle">4</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">5</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">6</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">7</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">8</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">9</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">10</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">11</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">12</span>
                     <span class="name">抹茶拿铁</span>
                     <span class="num">323,234</span>
                 </li>
             </ul>
-            
-            <div class="col-right">
-                <!-- <p>323,234</p>
-                <p>323,234</p>
-                <p>323,234</p>
-                <p>323,234</p>
-                <p>323,234</p>
-                <p>323,234</p>
-                <p>323,234</p>
-                <p>323,234</p>
-                <p>323,234</p>
-                <p>323,234</p>
-                <p>323,234</p> -->
-            </div>
         </div>
         <div class="container-four">
-            <!-- <div class="col-left">
-                <p>焦糖拿铁</p>
-                <p>焦糖拿铁</p>
-                <p>焦糖拿铁</p>
-                <p>焦糖拿铁</p>
-                <p>焦糖拿铁</p>
-                <p>焦糖拿铁</p>
-                <p>焦糖拿铁</p>
-                <p>焦糖拿铁</p>
-                <p>焦糖拿铁</p>
-                <p>焦糖拿铁</p>
-                <p>焦糖拿铁</p>
-            </div>
-            <div class="col-right">
-                <p>323,234</p>
-                <p>323,234</p>
-                <p>323,234</p>
-                <p>323,234</p>
-                <p>323,234</p>
-                <p>323,234</p>
-                <p>323,234</p>
-                <p>323,234</p>
-                <p>323,234</p>
-                <p>323,234</p>
-                <p>323,234</p>
-            </div> -->
+            <ul class="col-left">
+                <li>
+                    <span class="circle is-active">1</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle is-active">2</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle is-active">3</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">4</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">5</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">6</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">7</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">8</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">9</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">10</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">11</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+                <li>
+                    <span class="circle">12</span>
+                    <span class="name">抹茶拿铁</span>
+                    <span class="num">323,234</span>
+                </li>
+            </ul>
         </div>
       </div>
   </div>
@@ -207,31 +269,18 @@
     .wrapper-right {
         flex: 1;
         display: flex;
-        // justify-content: flex-start;
 
-        // .container-three,
-        // .container-four {
-        //     flex: 1;
-        //     display: flex;
-        //     justify-content: space-between;
-        //     align-items: center;
-        //     padding-right: 40px;
-        //     .col-left {
-        //         .image {
-        //             width: 18px;
-        //             height: 18px;
-        //             background: url('../../assets/img-hot/ax.png') no-repeat;
-        //             background-size: 100% auto;
-        //         }
-        //     }
-            
-        // }
-        .container-three {
-            margin: 130px 0 0;
+        .container-three ,
+        .container-four{
+            margin: 130px 70px 0 0;
 
-            .circle {
-                background-color: #314659;
-                color: #fff;
+            li {
+                padding-bottom: 15px;
+            }
+
+            .circle {              
+                background-color: #f5f5f5;
+                color: rgba(0,0,0,.65);
                 border-radius: 20px;
                 display: inline-block;
                 font-size: 12px;
@@ -243,6 +292,10 @@
                 text-align: center;
                 width: 20px;
                 
+            }
+            .is-active {
+                background-color: #314659;
+                color: #fff;
             }
             .name {
                 flex: 1;
@@ -259,6 +312,7 @@
                 font-size: 14px;
                 line-height: 22px;
             }
+
         }
     }
   }
