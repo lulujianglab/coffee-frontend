@@ -15,7 +15,6 @@
         </div>
       </div>
   </div>
-    
 </template>
 
 <script>
@@ -23,16 +22,19 @@
   import API from '../../api/api_user'
   import avatar from '../../assets/avatar.gif'
   export default {
-    created(){
-      
+    created(){      
+
     },
     data () {
       return {
-        
+        dataOne: [],
+        dataTwo: [],
+        dataThree: []
       }
     },
     methods: {
-      drawOne() {
+      drawOne(dataone) {
+        console.log(dataone,dataone.length)
         let myChartOne = this.$echarts.init(document.getElementById('myChartOne'))
         var rawData = [
           {name: '脂肪7g ', value:  7 },
@@ -44,6 +46,7 @@
           {name: ' 咖啡因0.15g ', value:  0.15 },
           
         ]
+        // let data = dataone
         myChartOne.setOption({
            
           title: {
@@ -65,7 +68,7 @@
             name: 'option',
             type: 'treemap',
             visibleMin: 450,
-            data: rawData,
+            data: dataone? dataone: rawData,
             leafDepth: 2,
             levels: [
                 {
@@ -103,7 +106,7 @@
           }]
         })
       },
-      drawTwo() {
+      drawTwo(data) {
         let myChartTwo = this.$echarts.init(document.getElementById('myChartTwo'))
         var rawData = [
           {name: '脂肪 ', value:  4 },
@@ -135,7 +138,7 @@
             name: 'option',
             type: 'treemap',
             visibleMin: 400,
-            data: rawData,
+            data: data ? data : rawData,
             leafDepth: 2,
             levels: [
                 {
@@ -173,7 +176,7 @@
           }]
         })
       },
-      drawThree() {
+      drawThree(data) {
         let myChartThree = this.$echarts.init(document.getElementById('myChartThree'))
         var rawData = [
           {name: '脂肪 ', value:  10 },
@@ -205,7 +208,7 @@
             name: 'option',
             type: 'treemap',
             visibleMin: 400,
-            data: rawData,
+            data: data ? data : rawData,
             leafDepth: 2,
             levels: [
                 {
@@ -245,9 +248,17 @@
       }   
     },
     mounted() {
-      this.drawOne()
-      this.drawTwo()
-      this.drawThree()
+        API.autocomplete().then(result => {
+          console.log('result',result)
+          this.dataOne = result.dataone
+          this.dataTwo = result.datatwo
+          this.dataThree = result.datathree
+          
+          this.drawOne(this.dataOne)
+          this.drawTwo(result.datatwo)
+          this.drawThree(result.datathree)
+        })
+      
     }
   }
 </script>

@@ -33,12 +33,19 @@
               </el-option>
           </el-select>
         </div>
-        <div class="textarea"></div>
+        <div class="textarea">
+          <div v-for="(item,index) in datas" :key="index">
+            <div class="kind">
+              <p>{{item.name}}</p>
+              <p>{{item.kind}}</p>
+          </div>
+          </div>
+        </div>
       </div>
       <div class="wrapper-right">
         <div class="image">
           <div class="coffee">
-            <el-carousel height="500px" indicator-position="none" interval="1000">
+            <el-carousel height="500px" indicator-position="none" :interval="1000">
               <el-carousel-item v-for="item in imgs" :key="item.index">
                 <img :src="item.src">
               </el-carousel-item>
@@ -62,14 +69,20 @@
       return {
         account: {
             optionKind: [{
-            value: '苦咖啡',
-            label: '苦咖啡'
+            value: 'ClassicEspressoDrinks',
+            label: 'ClassicEspressoDrinks'
           },{
-            value: '白咖啡',
-            label: '白咖啡'
+            value: 'Coffee',
+            label: 'Coffee'
           },{
-            value: '抹茶拿铁',
-            label: '抹茶拿铁'
+            value: 'FrappuccinoBlendedCoffee',
+            label: 'FrappuccinoBlendedCoffee'
+          },{
+            value: 'FrappuccinoBlendedCrme',
+            label: 'FrappuccinoBlendedCrme'
+          },{
+            value: 'FrappuccinoLightBlendedCoffee',
+            label: 'FrappuccinoLightBlendedCoffee'
           }],
           optionHot: [{
             value: '60',
@@ -97,17 +110,42 @@
         },
         imgs: [
           {index:1, src: require('../../../static/img1.png')},
-          {index:1, src: require('../../../static/img2.png')},
-          {index:1, src: require('../../../static/img3.png')}
-        ]
+          {index:2, src: require('../../../static/img2.png')},
+          {index:3, src: require('../../../static/img3.png')}
+        ],
+
+        // datas: [{ name:'黑咖啡',kind: '加奶'},{ name:'白咖啡',kind: '不加奶'}]
+        datas: []
       }
     },
     methods: {
       
      
     },
+    watch: {
+    　 newValue(val) {
+        console.log(val)
+        let param ={select: val}
+        API.selectgeneration(param).then(result => {
+            console.log(result)
+            this.datas = result.data
+            // console.log(4,this.dataradar)
+            // this.drawOne(this.dataradar.datalegend,this.dataradar.data)
+        })
+      }
+    },
+    computed: {
+    　　newValue() {
+    　　　　return this.account.valueKind
+    　　}
+    },
     mounted() {
-      
+      let param ={select: this.account.valueKind}
+      API.selectgeneration(param).then(result => {
+          console.log(result)
+          this.datas = result.data
+          // this.drawOne(this.dataradar.datalegend,this.dataradar.data)
+      })
     }
   }
 </script>
@@ -135,7 +173,21 @@
           width:100%;
           height: 100%;
           background-color: #f56c6c; 
-          opacity: 0.2;
+          opacity: 0.7;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          color: #fff;
+          padding: 0px 80px;
+          font-weight: 1200;
+          font-size: 30px;
+          border-radius: 20px;
+
+          .kind {
+            display: flex;
+            justify-content: space-between;
+            
+          }
         }
       }
 

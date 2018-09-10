@@ -137,3 +137,20 @@ body {
   // .el-carousel__container {
   //   height: 0;
   // }
+
+  .el-message-box {
+    text-align: center;
+  }
+  .el-message-box__btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .el-button--default {
+    width: 260px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    // border: none;
+  }

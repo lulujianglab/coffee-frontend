@@ -41,8 +41,7 @@ export const POST = (url, params) => {
 }
 
 export const GET = (url, params) => {
-  console.log(333,url)
-
+  console.log(url)
   return axios.get(`${base}${url}`, {params: params}).then(res => res.data)
 }
 

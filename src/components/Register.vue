@@ -1,4 +1,5 @@
 <template>
+<div class="wrapper">
   <div class="container">
     <div v-if="condition">
       <div class="mask">
@@ -57,7 +58,7 @@
   </el-form>
   </div>
   </div>
-  
+</div>
 </template>
 
 <script>
@@ -133,23 +134,25 @@
     }
   }
 </script>
-<style>
-  html {
-    height: 100%;
-  }
-  body {
-    /* background: #DFE9FB; */
-    height: 100%;
-    width: 100%;
-  }
-</style>
+
 <style lang="scss" scoped>
-    .container {
+    .wrapper {
       height: 100%;
-      width: 100%;
-      overflow: hidden;
-      background: url('../assets/img-register/background.jpg') repeat;
-      background-size: 100%;
+      background: url('../assets/img-register/zc.png') repeat;
+      background-size: 100% auto;
+      display: flex;
+     
+    }
+    .container {
+      flex: 1;
+      border: 5px solid #fff;
+      margin: 40px;
+      //  display: flex;
+      // height: 100%;
+      // width: 100%;
+      // overflow: hidden;
+      // background: url('../assets/img-register/background.jpg') repeat;
+      // background-size: 100%;
 
       .mask {
         position: fixed;

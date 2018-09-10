@@ -1,4 +1,5 @@
 <template>
+  <div class="wrapper">
   <div class="login-layout">
     <el-form ref="AccountFrom" :model="account" :rules="rules" label-position="left" label-width="0px"
             class="demo-ruleForm login-container">
@@ -15,6 +16,7 @@
       </el-form-item>
       <a class="small" @click="handleRegister">立即注册</a>
     </el-form>
+  </div>
   </div>
 </template>
 
@@ -48,6 +50,7 @@
           if (valid) {
             this.loading = true;
             let loginParams = {username: this.account.username, pwd: this.account.pwd};
+            
 //             API.login(loginParams).then(function (result) {
 //               that.loading = false;
 //               if (result && result.id) {
@@ -78,28 +81,25 @@
     }
   }
 </script>
-<style>
-  html {
-    height: 100%;
-  }
-  body {
-    /* background: #DFE9FB; */
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    background: url('../assets/img-login/backgound.png') repeat;
-    background-size: 100%;
-  }
-</style>
+
 <style lang="scss" scoped>
-  .login-layout {
+  .wrapper {
     height: 100%;
-    widows: 100%;
+    background: url('../assets/img-login/denglu.png') repeat;
+    background-size: 100% auto;  
+    display: flex;
+  }
+  .login-layout {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border: 5px solid #fff;
+    margin: 40px;
+   
   }
   .login-container {
+   
     /*box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);*/
     -webkit-border-radius: 5px;
     border-radius: 5px;

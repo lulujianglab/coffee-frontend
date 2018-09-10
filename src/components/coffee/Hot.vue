@@ -18,130 +18,24 @@
       <div class="wrapper-right">
           <div class="container-three">
             <ul class="col-left">
-                <li>
-                    <span class="circle is-active">1</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle is-active">2</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle is-active">3</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle">4</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle">5</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle">6</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle">7</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle">8</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle">9</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle">10</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle">11</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle">12</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
+                <div v-for="(item,index) in dataone" :key="index">
+                    <li>
+                        <span class="circle" :class="{'is-active': item.active}">{{item.index}}</span>
+                        <span class="name">{{item.name.split('(')[0]}}</span>
+                        <!-- <span class="num">{{item.num}}</span>       -->
+                    </li>
+                </div>
             </ul>
         </div>
         <div class="container-four">
             <ul class="col-left">
-                <li>
-                    <span class="circle is-active">1</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle is-active">2</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle is-active">3</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle">4</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle">5</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle">6</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle">7</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle">8</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle">9</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle">10</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle">11</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
-                <li>
-                    <span class="circle">12</span>
-                    <span class="name">抹茶拿铁</span>
-                    <span class="num">323,234</span>
-                </li>
+                <div v-for="(item,index) in datatwo" :key="index">
+                    <li>
+                        <span class="circle" :class="{'is-active': item.active}">{{item.index}}</span>
+                        <span class="name">{{item.name.split('(')[0]}}</span>
+                        <!-- <span class="num">{{item.num}}</span>       -->
+                    </li>
+                </div>
             </ul>
         </div>
       </div>
@@ -161,37 +55,121 @@
       return {
         account: {
             options: [{
-            value: '苦咖啡',
-            label: '苦咖啡'
+            value: 'Classic Espresso Drinks',
+            label: 'Classic Espresso Drinks'
           },{
-            value: '白咖啡',
-            label: '白咖啡'
+            value: 'Coffee',
+            label: 'Coffee'
           },{
-            value: '抹茶拿铁',
-            label: '抹茶拿铁'
+            value: 'Frappuccino Blended Coffee',
+            label: 'Frappuccino Blended Coffee'
           },{
-            value: '焦糖拿铁',
-            label: '焦糖拿铁'
+            value: 'Frappuccino Blended Crme',
+            label: 'Frappuccino Blended Crme'
           },{
-            value: '马琪雅朵',
-            label: '马琪雅朵'
+            value: 'Frappuccino Light Blended Coffee',
+            label: 'Frappuccino Light Blended Coffee'
           },{
-            value: '美式咖啡',
-            label: '美式咖啡'
+            value: 'Shaken Iced Beverages',
+            label: 'Shaken Iced Beverages'
           },{
-            value: '卡布奇诺',
-            label: '卡布奇诺'
+            value: 'Signature Espresso Drinks',
+            label: 'Signature Espresso Drinks'
           },{
-            value: '焦糖玛琪朵',
-            label: '焦糖玛琪朵'
+            value: 'Smoothies',
+            label: 'Smoothies'
+          },{
+            value: 'Tazo Tea Drinks',
+            label: 'Tazo Tea Drinks'
           }],
-        value:'',
+          value:'Signature Espresso Drinks',
 
-        }
+        },
+        dataone: [],
+        datatwo: [],
+        dataradar: null,
+        // datas: [{
+        //     active: true,
+        //     index: 1,
+        //     name: '抹茶拿铁',
+        //     num:' 323,234'
+        // },{
+        //     active: true,
+        //     index: 2,
+        //     name: '抹茶拿铁',
+        //     num:' 323,234'
+        // },{
+        //     active: true,
+        //     index: 3,
+        //     name: '抹茶拿铁',
+        //     num:' 323,234'
+        // },{
+        //     active: false,
+        //     index: 4,
+        //     name: '抹茶拿铁',
+        //     num:' 323,234'
+        // },{
+        //     active: false,
+        //     index: 5,
+        //     name: '抹茶拿铁',
+        //     num:' 323,234'
+        // },{
+        //     active: false,
+        //     index: 6,
+        //     name: '抹茶拿铁',
+        //     num:' 323,234'
+        // },{
+        //     active: false,
+        //     index: 7,
+        //     name: '抹茶拿铁',
+        //     num:' 323,234'
+        // },{
+        //     active: false,
+        //     index: 8,
+        //     name: '抹茶拿铁',
+        //     num:' 323,234'
+        // },{
+        //     active: false,
+        //     index: 9,
+        //     name: '抹茶拿铁',
+        //     num:' 323,234'
+        // },{
+        //     active: false,
+        //     index: 10,
+        //     name: '抹茶拿铁',
+        //     num:' 323,234'
+        // },{
+        //     active: false,
+        //     index: 11,
+        //     name: '抹茶拿铁',
+        //     num:' 323,234'
+        // },{
+        //     active: fasle,
+        //     index: 12,
+        //     name: '抹茶拿铁',
+        //     num:' 323,234'
+        // }]
+        // dataradar: {
+        //     datalegend: ['白巧克力摩卡（不加奶油）','焦糖玛奇朵','热巧克力（不加奶油）'],
+        //     data: [
+        //         {
+        //             value : [11, 7, 0, 58, 15, 0.15],
+        //             name : '白巧克力摩卡（不加奶油）'
+        //         },
+        //         {
+        //             value : [7, 3.5, 0, 32, 10, 0.15],
+        //             name : '焦糖玛奇朵'
+        //         },
+        //         {
+        //             value : [6, 1.5, 2, 25, 9, 0.02],
+        //             name : '热巧克力（不加奶油）'
+        //         }
+        //     ]
+        // }
       }
     },
     methods: {
-      drawOne() {
+      drawOne(datalegend,data) {
           let myChartOne = this.$echarts.init(document.getElementById('myChartOne'))
           myChartOne.setOption({
               title: {
@@ -199,7 +177,7 @@
             },
             tooltip: {},
             legend: {
-                data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+                data: datalegend ? datalegend : ['白巧克力摩卡（不加奶油）','焦糖玛奇朵','热巧克力（不加奶油）']
             },
             radar: {
                 // shape: 'circle',
@@ -212,35 +190,72 @@
                 }
                 },
                 indicator: [
-                { name: '销售（sales）', max: 6500},
-                { name: '管理（Administration）', max: 16000},
-                { name: '信息技术（Information Techology）', max: 30000},
-                { name: '客服（Customer Support）', max: 38000},
-                { name: '研发（Development）', max: 52000},
-                { name: '市场（Marketing）', max: 25000}
+                    { name: 'Calories', max: 510},
+                    { name: ' Tatal Fat(g)', max: 4.5},
+                    { name: 'Sugars(g)', max: 84},
+                    { name: 'Protein(g)', max: 20},
+                    { name: ' VitaminC', max: 100},
+                    { name: 'Caffeeine(mg)', max: 500}
                 ]
             },
             series: [{
-                name: '预算 vs 开销（Budget vs spending）',
+                name: '',
                 type: 'radar',
                 // areaStyle: {normal: {}},
-                data : [
+                data : data? data:[
                     {
-                        value : [4300, 10000, 28000, 35000, 50000, 19000],
-                        name : '预算分配（Allocated Budget）'
+                        value : [11, 7, 0, 58, 15, 0.15],
+                        name : '白巧克力摩卡（不加奶油）'
                     },
                     {
-                        value : [5000, 14000, 28000, 31000, 42000, 21000],
-                        name : '实际开销（Actual Spending）'
+                        value : [7, 3.5, 0, 32, 10, 0.15],
+                        name : '焦糖玛奇朵'
+                    },
+                    {
+                        value : [6, 1.5, 2, 25, 9, 0.02],
+                        name : '热巧克力（不加奶油）'
                     }
                 ]
             }]
-          })
-      }
-     
+          },true)
+      } 
+    },
+    watch: {
+        　newValue(val) {
+            console.log(val)
+            let Beverage_category ={Beverage_category: val}
+            API.hotradar(Beverage_category).then(result => {
+                console.log(result)
+                this.dataradar = result.data
+                console.log(4,this.dataradar)
+                this.drawOne(this.dataradar.datalegend,this.dataradar.data)
+            })
+        }
+    },
+    computed: {
+    　　newValue() {
+    　　　　return this.account.value
+    　　}
     },
     mounted() {
-      this.drawOne()
+      
+      API.hotone().then(result => {
+          this.dataone = result.data
+          console.log(1,this.dataone)
+      })
+      API.hottwo().then(result => {
+          this.datatwo = result.data
+          console.log(2,this.datatwo)
+      })
+
+      console.log('value',this.account.value)
+      let Beverage_category ={Beverage_category: this.account.value}
+      API.hotradar(Beverage_category).then(result => {
+          console.log(result)
+          this.dataradar = result.data
+          console.log(3,this.dataradar)
+          this.drawOne(this.dataradar.datalegend,this.dataradar.data)
+      }) 
     }
   }
 </script>
@@ -269,11 +284,18 @@
     .wrapper-right {
         flex: 1;
         display: flex;
+        justify-content: flex-start;
 
         .container-three ,
         .container-four{
-            margin: 130px 70px 0 0;
-
+            flex: 1;
+            margin: 130px 0px 0 0;
+            .col-left {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                flex-wrap: nowrap;
+            }
             li {
                 padding-bottom: 15px;
             }

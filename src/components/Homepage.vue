@@ -21,7 +21,7 @@ import API from '../api/api_user.js';
       },
       mounted() {
         // console.log(22)
-        // let loginParams = {username:"zhanshan"}
+        // let loginParams = {username:"zhangshan"}
         // API.test(loginParams).then(function (result) {
         //   console.log('result',result)
         // })

@@ -33,19 +33,16 @@
       }
     },
     methods: {
-      drawOne() {
+      drawOne(age,name,num) {
+          console.log(age,name,num)
           let myChartOne = this.$echarts.init(document.getElementById('myChartOne'))
           myChartOne.setOption({
-//          color: ['#0a97b','#4674c1',"#fdbf2d","#a5a5a5","#e4dc44"],
             tooltip : {
                 trigger: 'axis',
                 axisPointer : {            // 坐标轴指示器，坐标轴触发有效
                     type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
                 }
             },
-//          legend: {
-//              data:['咖啡1','咖啡2','联盟广告','视频广告','搜索引擎','百度','谷歌','必应','其他']
-//          },
             grid: {
                 left: '3%',
                 right: '4%',
@@ -55,7 +52,7 @@
             xAxis : [
                 {
                     type : 'category',
-                    data : ['10岁以下','10-20岁','20-30岁','30-40岁','40-50岁','50-60岁','60岁以上']
+                    data : age?age:['10岁以下','10-20岁','20-30岁','30-40岁','40-50岁','50-60岁','60岁以上']
                 }
             ],
             yAxis : [
@@ -65,21 +62,21 @@
             ],
             series : [
                 {
-                	name:"奶味咖啡",
+                	name:name?name[0]:"奶味咖啡",
                 	type:'bar',
-                	data:[150,200,400,340,347,231,200]
+                	data:num?num[0]:[150,200,400,340,347,231,200]
                 },
                 
                 {
-                    name:'咖啡饮品',
+                    name:name?name[1]:'咖啡饮品',
                     type:'bar',
                     stack: '广告',
-                    data:[150, 232, 257, 450, 341, 330, 189]
+                    data:num?num[1]:[150, 232, 257, 450, 341, 330, 189]
                 },
                 {
-                    name:'奶昔',
+                    name:name?name[2]:'奶昔',
                     type:'bar',
-                    data:[321, 423, 467, 321, 451, 210, 100],
+                    data:num?num[2]:[321, 423, 467, 321, 451, 210, 100],
                     markLine : {
                         lineStyle: {
                             normal: {
@@ -96,7 +93,7 @@
 
           })
       },
-      drawTwo() {
+      drawTwo(name,data) {
           let myChartTwo = this.$echarts.init(document.getElementById('myChartTwo'))
           myChartTwo.setOption({
             title : {
@@ -110,7 +107,7 @@
             legend: {
                 orient: 'vertical',
                 left: 'left',
-                data: ['摩卡咖啡','卡布奇诺','冰咖啡','拿铁咖啡','其他']
+                data: name?name:['摩卡咖啡','卡布奇诺','冰咖啡','拿铁咖啡','其他']
             },
             series : [
                 {
@@ -118,7 +115,7 @@
                     type: 'pie',
                     radius : '55%',
                     center: ['50%', '60%'],
-                    data:[
+                    data:data?data:[
                         {value:356, name:'摩卡咖啡'},
                         {value:310, name:'卡布奇诺'},
                         {value:234, name:'冰咖啡'},
@@ -179,9 +176,23 @@
      
     },
     mounted() {
-      this.drawOne()
-      this.drawTwo()
-      this.drawThree()
+        API.agenum().then(result => {
+          console.log(result)
+          console.log(3,result.data)
+          this.drawOne(result.data.age,result.data.name,result.data.num)
+        })
+        // API.mannum().then(result => {
+        //   console.log(result)
+        //   console.log(3,result.data)
+        //   this.drawTwo(result.name,result.data)
+        // })
+        // API.womannum().then(result => {
+        //   console.log(result)
+        //   console.log(3,result.data)
+        //   this.drawThree(result.name,result.data)
+        // })
+        this.drawTwo()
+        this.drawThree()
     }
   }
 </script>

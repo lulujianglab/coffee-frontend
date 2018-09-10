@@ -35,10 +35,10 @@ let router = new Router({
       component: Home,
       redirect: '/homepage',
       leaf: true, // 只有一个节点
-      menuShow: true,
+      menuShow: false,
       iconCls: 'iconfont icon-home', // 图标样式class
       children: [
-        {path: '/homepage', component: Homepage, name: '首页', menuShow: true}
+        {path: '/homepage', component: Homepage, name: '首页', menuShow: false}
       ]
     },
     {
@@ -84,7 +84,6 @@ let router = new Router({
 router.beforeEach((to, from, next) => {
   console.log('to:' + to.path)
   if (to.path === '/login' || to.path === '/register') {
-    console.log(55)
     next()
   } else {
     if (to.path.startsWith('/login')) {

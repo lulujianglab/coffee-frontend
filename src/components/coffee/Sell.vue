@@ -37,24 +37,6 @@
       }
     },
     methods: {
-        drawLine(){
-            // 基于准备好的dom，初始化echarts实例
-            let myChart = this.$echarts.init(document.getElementById('myChart'))
-            // 绘制图表
-            myChart.setOption({
-                title: { text: '咖啡销售' },
-                tooltip: {},
-                xAxis: {
-                    data: ["白咖啡","黑咖啡","茶","星冰乐","奶昔","浓咖啡"]
-                },
-                yAxis: {},
-                series: [{
-                    name: '销量',
-                    type: 'bar',
-                    data: [5, 20, 36, 10, 10, 20]
-                }]
-            });
-        },
         drawone() {
         	//最早记录时间
             var base = +new Date(2010, 9, 1);
@@ -62,7 +44,6 @@
             var date = [];
 					//访问量数据
             var data = [(Math.random()+0.6) * 200];					
-
             for (var i = 1; i < 3000; i++) {
                 var now = new Date(base += oneDay);
                 date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'));
@@ -81,13 +62,6 @@
                     // text: '访问量',
                 },
                 toolbox: {
-                    // feature: {
-                    //     dataZoom: {
-                    //         yAxisIndex: 'none'
-                    //     },
-                    //     restore: {},
-                    //     saveAsImage: {}
-                    // }
                 },
                 xAxis: {
                     type: 'category',
@@ -148,7 +122,7 @@
                 ]
             })
         },
-        drawthree() {
+        drawthree(data) {
             let myChartThree = this.$echarts.init(document.getElementById('myChartThree'))
             myChartThree.setOption({
                 tooltip : {
@@ -168,7 +142,7 @@
                         type:'pie',
                         radius : [20, 150],
                         roseType : 'area',
-                        data:[
+                        data: data?data:[
                             {value:513928, name:'摩卡星冰乐（不加奶油）'},
                             {value:509893, name:'巧克力碎星冰乐（不加奶油）'},
                             {value:508568, name:'意式浓缩咖啡'},
@@ -185,159 +159,161 @@
                             {value: 269592, name:'冰咖啡'},
                             {value:267436, name:'巧克力碎星冰乐'},
                             {value:261970, name:' 绿茶拿铁'},
-                            {value:257991, name:'摩卡星冰乐'},
-                            // {value:2300617, name:'其他'},
-                            
+                            {value:257991, name:'摩卡星冰乐'},    
                         ]
                     }
                 ]           
             })
         },
                       
-        drawfour() {
+        drawfour(name,num) {
             let myChartFour = this.$echarts.init(document.getElementById('myChartFour'))
             myChartFour.setOption({
-							     tooltip : {
-        trigger: 'axis',
-        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-        }
-    },
-    legend: {
-        data: ['经典浓缩饮品', '咖啡饮品','咖啡混合星冰乐','奶味咖啡星冰乐','咖啡轻混合星冰乐','冰摇饮品','招牌浓缩饮品','奶昔饮品','泰舒茶饮品']
-    },
-    grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-    },
-    xAxis:  {
-        type: 'category',
-        data: ['一月','二月','三月']
-    },
-    yAxis: {
-        type: 'value'
-    },
-    series: [
-        {
-            name: '经典浓缩饮品',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: [554453, 527101, 549124]
-        },
-        {
-            name: '咖啡饮品',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: [569073, 596320, 510297]
-        },
-        {
-            name: '咖啡混合星冰乐',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: [230458, 239444, 240708]
-        },
-        {
-            name: '奶味咖啡星冰乐',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: [257803, 226163, 285646]
-        },
-        {
-            name: '咖啡轻混合星冰乐',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: [268433, 237569, 243109]
-        },
-        {
-            name: '冰摇饮品',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: [262012, 221669, 260424]
-        },
-        {
-            name: '招牌浓缩饮品',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: [233848, 252678, 228465]
-        },
-        {
-            name: '奶昔饮品',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: [254668, 262252, 245291]
-        },
-        {
-            name: '泰舒茶饮品',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: [425087, 414906, 389457]
-        }
-    ]
+				tooltip : {
+                    trigger: 'axis',
+                    axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                        type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                    }
+                },
+                legend: {
+                    data: name ? name:['经典浓缩饮品', '咖啡饮品','咖啡混合星冰乐','奶味咖啡星冰乐','咖啡轻混合星冰乐','冰摇饮品','招牌浓缩饮品','奶昔饮品','泰舒茶饮品']
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis:  {
+                    type: 'category',
+                    data: ['一月','二月','三月']
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: [
+                    {
+                        name: name?name[0]:'经典浓缩饮品',
+                        type: 'bar',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'insideRight'
+                            }
+                        },
+                        data: num?num[0]:[554453, 527101, 549124]
+                    },
+                    {
+                        name: name?name[1]:'咖啡饮品',
+                        type: 'bar',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'insideRight'
+                            }
+                        },
+                        data: num?num[1]:[569073, 596320, 510297]
+                    },
+                    {
+                        name: name?name[2]:'咖啡混合星冰乐',
+                        type: 'bar',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'insideRight'
+                            }
+                        },
+                        data: num?num[2]:[230458, 239444, 240708]
+                    },
+                    {
+                        name: name?name[3]:'奶味咖啡星冰乐',
+                        type: 'bar',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'insideRight'
+                            }
+                        },
+                        data: num?num[3]:[257803, 226163, 285646]
+                    },
+                    {
+                        name: name?name[4]:'咖啡轻混合星冰乐',
+                        type: 'bar',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'insideRight'
+                            }
+                        },
+                        data: num?num[4]:[268433, 237569, 243109]
+                    },
+                    {
+                        name: name?name[5]:'冰摇饮品',
+                        type: 'bar',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'insideRight'
+                            }
+                        },
+                        data: num?num[5]:[262012, 221669, 260424]
+                    },
+                    {
+                        name: name?name[6]:'招牌浓缩饮品',
+                        type: 'bar',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'insideRight'
+                            }
+                        },
+                        data: num?num[6]:[233848, 252678, 228465]
+                    },
+                    {
+                        name: name?name[7]:'奶昔饮品',
+                        type: 'bar',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'insideRight'
+                            }
+                        },
+                        data: num?num[7]:[254668, 262252, 245291]
+                    },
+                    {
+                        name: name?name[8]:'泰舒茶饮品',
+                        type: 'bar',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'insideRight'
+                            }
+                        },
+                        data: num?num[8]:[425087, 414906, 389457]
+                    }
+                ]
             })
         }
     },
     mounted() {
-    //   this.drawLine();
+        API.hotoccupy().then(result => {
+          this.drawthree(result.data)
+        })
+        API.hotmonth().then(result => {
+          console.log(result)
+          console.log(3,result.data)
+          this.drawfour(result.data.name,result.data.num)
+        })
     this.drawone()
-//  this.drawtow()
-    this.drawthree()
-    this.drawfour()
     }
   }
 </script>

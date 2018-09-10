@@ -22,9 +22,9 @@
       }
     },
     methods: {
-      drawOne() {
+      drawOne(data) {
         let myChartOne = this.$echarts.init(document.getElementById('myChartOne'))
-        var geoCoordMap = {
+        var geoCoordMap = {    
             "北京": [116.46, 39.92],
             "南京": [118.78, 32.04],
             "吉林": [126.57, 43.87],
@@ -385,7 +385,11 @@
       }  
     },
     mounted() {
-      this.drawOne()
+        // API.area().then(result => {
+        //     console.log(result)
+        //     // this.drawOne(result.data.geoCoordMap,result.data.data)
+        // })
+        this.drawOne()
     }
   }
 </script>
