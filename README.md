@@ -42,19 +42,19 @@
 
 ``` bash
 
-安装依赖
+1) 安装依赖
 
 > npm install
 
-依赖安装成功后执行启动命令
+2) 依赖安装成功后执行启动命令
 
 > npm run dev
 
-显示如下内容说明本地启动成功
+3) 显示如下内容说明本地启动成功
   
 Your application is running here: http://localhost:8080
 
-正式环境编译命令
+4) 正式环境编译命令
 
 > npm run build
 
