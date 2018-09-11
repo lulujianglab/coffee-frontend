@@ -11,7 +11,9 @@
 * vue-router：前端路由，用Vue.js + vue-router 创建单页应用(SPA)非常简单
 
 * axios: 基于 Promise 的 HTTP 请求客户端，可同时在浏览器和 node.js 中使用
-　　
+
+* flex: Flexible Box 的缩写，弹性布局，CSS3的新属性之一。简单来说，就是通过给元素盒子设置一些属性，让元素盒子具有伸缩性。有别于之前的display+position+float布局，flex布局可以简便、完整、响应式地实现各种页面布局
+* 
 ## 项目结构
 
 ```
