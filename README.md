@@ -60,4 +60,25 @@ Your application is running here: http://localhost:8080
 
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 更新日志
+
+> 2018-09-05
+ >> 1.框架搭建，开发侧边导航栏组件         
+ >> 2.开发完部分静态页面          
+  
+ > 2018-09-06
+ >> 1.开发完所有的静态页面     
+ >> 2.跑通静态页面逻辑，修复部分bug      
+ 
+ > 2017-12-13
+ >> 1.去掉了canvas绘图代码。  
+ >> 2.element-ui升级的2.0.7，vue版本升级到2.5.9。  
+ 
+ > 2017-11-13
+ >> 1.去掉先前在前端写的模拟数据，增加server端提供模拟数据。  
+ >> 2.代码优化。  
+ 
+ > 2017-09-20
+ >> 1.主要组件升级：vue.js升级到v2.4.4，element-ui升级到v1.4.4，其它组件升级  
+ >> 2.主界面左侧菜单栏修改，使用element-ui升级的导航组件支持折叠功能。  
+ >> 3.其它调整。
