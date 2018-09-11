@@ -3,7 +3,6 @@
   <div class="login-layout">
     <el-form ref="AccountFrom" :model="account" :rules="rules" label-position="left" label-width="0px"
             class="demo-ruleForm login-container">
-      <!-- <h3 class="title">会员登录</h3> -->
       <el-form-item prop="username">
         <el-input type="text" v-model="account.username" auto-complete="off" placeholder="用户名" style="opacity:0.7;"></el-input>
       </el-form-item>
@@ -27,7 +26,7 @@
       return {
         loading: false,
         account: {
-          username: 'admin',
+          username: 'zhangshan',
           pwd: '123456'
         },
         rules: {
@@ -70,8 +69,8 @@
 //               console.log(error);
 //               that.$message.error({showClose: true, message: '请求出现异常', duration: 2000});
 //             });
-                localStorage.setItem('access-user', 'zhangshan');
-                that.$router.push({path: '/'});
+              localStorage.setItem('access-user', this.account.username);
+              that.$router.push({path: '/'});
           }
         });
       },

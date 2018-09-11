@@ -10,8 +10,8 @@
         </div>
       </div>
       <div class="wrapper-right">
-        <div class="container-three">          
-            <div id="myChartFour" class="chart-four" :style="{width: '580px', height: '450px'}"></div>
+        <div class="container-three">
+            <div id="myChartFour" class="chart-four" :style="{width: '580px', height: '480px'}"></div>
         </div>
       </div>
       
@@ -176,17 +176,17 @@
                     }
                 },
                 legend: {
-                    data: name ? name:['经典浓缩饮品', '咖啡饮品','咖啡混合星冰乐','奶味咖啡星冰乐','咖啡轻混合星冰乐','冰摇饮品','招牌浓缩饮品','奶昔饮品','泰舒茶饮品']
+                    data: name ? name:['经典浓缩饮品', '咖啡饮品','咖啡混合星冰乐','奶味咖啡星冰乐','咖啡轻混合星冰乐','冰摇饮品','招牌浓缩饮品','奶昔饮品','泰舒茶饮品'],
                 },
                 grid: {
                     left: '3%',
                     right: '4%',
-                    bottom: '3%',
+                    bottom: '5%',
                     containLabel: true
                 },
                 xAxis:  {
                     type: 'category',
-                    data: ['一月','二月','三月']
+                    data: ['一月','二月','三月'],
                 },
                 yAxis: {
                     type: 'value'
@@ -347,14 +347,14 @@
         }
     }
     .wrapper-right {
-        padding-top: 240px;
+        padding-top: 220px;
         flex: 1;
         display: flex;
         .container-three {
             flex: 1;
             display: flex;
             // justify-content: flex-end;
-            align-items: center;       
+            // align-items: center;       
         }
     }
   }

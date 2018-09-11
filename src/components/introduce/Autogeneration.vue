@@ -33,8 +33,7 @@
       }
     },
     methods: {
-      drawOne(dataone) {
-        console.log(dataone,dataone.length)
+      drawOne(name,data) {
         let myChartOne = this.$echarts.init(document.getElementById('myChartOne'))
         var rawData = [
           {name: '脂肪7g ', value:  7 },
@@ -50,7 +49,7 @@
         myChartOne.setOption({
            
           title: {
-              text: '拿铁咖啡',
+              text: name?name:'拿铁咖啡',
               left: 'center'
           },
           tooltip: {},
@@ -68,7 +67,7 @@
             name: 'option',
             type: 'treemap',
             visibleMin: 450,
-            data: dataone? dataone: rawData,
+            data: data? data: rawData,
             leafDepth: 2,
             levels: [
                 {
@@ -106,7 +105,7 @@
           }]
         })
       },
-      drawTwo(data) {
+      drawTwo(name,data) {
         let myChartTwo = this.$echarts.init(document.getElementById('myChartTwo'))
         var rawData = [
           {name: '脂肪 ', value:  4 },
@@ -120,7 +119,7 @@
         ]
         myChartTwo.setOption({
           title: {
-            text: '摩卡星冰乐（不加奶油）',
+            text: name?name:'摩卡星冰乐（不加奶油）',
             left: 'center'
           },
           tooltip: {},
@@ -176,7 +175,7 @@
           }]
         })
       },
-      drawThree(data) {
+      drawThree(name,data) {
         let myChartThree = this.$echarts.init(document.getElementById('myChartThree'))
         var rawData = [
           {name: '脂肪 ', value:  10 },
@@ -190,7 +189,7 @@
         ]
         myChartThree.setOption({
           title: {
-            text: '绿茶拿铁',
+            text: name?name:'绿茶拿铁',
             left: 'center'
           },
           tooltip: {},
@@ -248,15 +247,18 @@
       }   
     },
     mounted() {
-        API.autocomplete().then(result => {
+        let user = window.localStorage.getItem('access-user')
+        let params ={user_name: user}
+        console.log('params',params)
+        API.autocomplete(params).then(result => {
           console.log('result',result)
           this.dataOne = result.dataone
           this.dataTwo = result.datatwo
           this.dataThree = result.datathree
           
-          this.drawOne(this.dataOne)
-          this.drawTwo(result.datatwo)
-          this.drawThree(result.datathree)
+          this.drawOne(this.dataOne.name,this.dataOne.data)
+          this.drawTwo(result.datatwo.name,this.dataTwo.data)
+          this.drawThree(result.datathree.name,this.dataThree.data)
         })
       
     }

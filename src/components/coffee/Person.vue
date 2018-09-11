@@ -34,7 +34,6 @@
     },
     methods: {
       drawOne(age,name,num) {
-          console.log(age,name,num)
           let myChartOne = this.$echarts.init(document.getElementById('myChartOne'))
           myChartOne.setOption({
             tooltip : {
@@ -133,7 +132,8 @@
             ]
           })
       },
-      drawThree() {
+      drawThree(name, data) {
+          console.log(name,data)
           let myChartThree = this.$echarts.init(document.getElementById('myChartThree'))
           myChartThree.setOption({
               title : {
@@ -147,7 +147,7 @@
             legend: {
                 orient: 'vertical',
                 left: 'left',
-                data: ['调制咖啡','拿铁咖啡','奶昔饮品','印度奶茶','其他']
+                data:name?name: ['调制咖啡','拿铁咖啡','奶昔饮品','印度奶茶','其他']
             },
             series : [
                 {
@@ -155,7 +155,7 @@
                     type: 'pie',
                     radius : '55%',
                     center: ['50%', '60%'],
-                    data:[
+                    data:data?data:[
                         {value:345, name:'调制咖啡'},
                         {value:213, name:'拿铁咖啡'},
                         {value:450, name:'奶昔饮品'},
@@ -177,22 +177,20 @@
     },
     mounted() {
         API.agenum().then(result => {
-          console.log(result)
-          console.log(3,result.data)
           this.drawOne(result.data.age,result.data.name,result.data.num)
         })
-        // API.mannum().then(result => {
-        //   console.log(result)
-        //   console.log(3,result.data)
-        //   this.drawTwo(result.name,result.data)
-        // })
+        API.mannum().then(result => {
+          console.log(result[1],result[0])
+          this.drawTwo(result[1].male.name,result[1].male.data)
+          this.drawThree(result[0].female.name,result[0].female.data)
+        })
         // API.womannum().then(result => {
         //   console.log(result)
         //   console.log(3,result.data)
         //   this.drawThree(result.name,result.data)
         // })
-        this.drawTwo()
-        this.drawThree()
+        // this.drawTwo()
+        // this.drawThree()
     }
   }
 </script>

@@ -24,72 +24,24 @@
     methods: {
       drawOne(data) {
         let myChartOne = this.$echarts.init(document.getElementById('myChartOne'))
-        var geoCoordMap = {    
-            "北京": [116.46, 39.92],
-            "南京": [118.78, 32.04],
-            "吉林": [126.57, 43.87],
-            "上海": [121.48, 31.22],
-            "成都": [104.06, 30.67],
-            "哈尔滨": [126.63, 45.75],
-            "沈阳": [123.38, 41.8],
-            // "合肥":[117.27,31.86],
-            "武汉": [114.31, 30.52],
-            "石家庄": [114.48, 38.03],
-            "天津": [117.2, 39.13],
-            "太原": [112.53, 37.87],
-            "西安": [108.95, 34.27],
-            "南宁": [108.33, 22.84],
-            "南昌": [115.89, 28.68],
-            "济南": [117, 36.65],
+        var geoCoordMap = {  
+            "Zhengzhou": [113.65, 34.76],
+            "Fuzhou": [119.3, 26.08],
+            "Xiamen": [118.1, 24.46],
+            "Shenyang": [123.38, 41.8], 
+            "Dalian": [121.62, 38.92],
+            "Qingdao": [120.33, 36.07], 
+            "Xi'an": [108.95, 34.27],
+            "Nanjing": [118.78, 32.04],
+            "Wuhan": [114.31, 30.52],
+            "Tianjin": [117.2, 39.13], 
+            "Hangzhou": [120.19, 30.26],
+            "Chengdu": [104.06, 30.67],
+            "Guangzhou": [113.23, 23.16],
+            "Shenzhen": [114.07, 22.62],
+            "Beijing": [116.46, 39.92],  
+            "Shanghai": [121.48, 31.22],      
         }
-
-        var data = [{
-            name: "北京",
-            value: 38
-        }, {
-            name: "南京",
-            value: 147
-        }, {
-            name: "吉林",
-            value: 74
-        }, {
-            name: "上海",
-            value: 33
-        }, {
-            name: "成都",
-            value: 192
-        }, {
-            name: "哈尔滨",
-            value: 35
-        }, {
-            name: "沈阳",
-            value: 0
-        }, {
-            name: "武汉",
-            value: 36
-        }, {
-            name: "石家庄",
-            value: 32
-        }, {
-            name: "天津",
-            value: 7
-        }, {
-            name: "太原",
-            value: 1
-        }, {
-            name: "西安",
-            value: 63
-        }, {
-            name: "南宁",
-            value: 29
-        }, {
-            name: "南昌",
-            value: 48
-        }, {
-            name: "济南",
-            value: 61
-        }]
-
         var convertData = function(data) {
             var res = [];
             for (var i = 0; i < data.length; i++) {
@@ -125,8 +77,6 @@
             barData.push(data[i].value);
             sum += data[i].value;
         }
-        console.log(categoryData);
-        console.log(sum + "   " + count)
     
         myChartOne.setOption({
             // backgroundColor: '#404a59',
@@ -144,7 +94,8 @@
                 }
             }, {
                 id: 'statistic',
-                text: count ? '平均: ' + parseInt((sum / count).toFixed(4)) : '',
+                // text: count ? '平均: ' + parseInt((sum / count).toFixed(4)) : '',
+                text: '单位:万',
                 right: 120,
                 top: 40,
                 width: 100,
@@ -188,10 +139,11 @@
             },
             geo: {
                 map: 'china',
-                left: '10',
-                right: '35%',
+                left: '0',
+                top: '10%',
+                right: '25%',
                 center: [117.98561551896913, 31.205000490896193],
-                zoom: 1.5,
+                zoom: 0.9,
                 label: {
                     emphasis: {
                         show: false
@@ -214,7 +166,7 @@
             grid: {
                 right: 40,
                 top: 100,
-                bottom: 40,
+                bottom: 80,
                 width: '30%'
             },
             xAxis: {
@@ -339,7 +291,6 @@
             var maxBar = 30;
             var sum = 0;
             var count = 0;
-
             for (var i = 0; i < mainSeries.dataIndex.length; i++) {
                 var rawIndex = mainSeries.dataIndex[i];
                 var dataItem = convertedData[0][rawIndex];
@@ -385,11 +336,10 @@
       }  
     },
     mounted() {
-        // API.area().then(result => {
-        //     console.log(result)
-        //     // this.drawOne(result.data.geoCoordMap,result.data.data)
-        // })
-        this.drawOne()
+        API.area().then(result => {
+            console.log(result)
+            this.drawOne(result.data)
+        })
     }
   }
 </script>

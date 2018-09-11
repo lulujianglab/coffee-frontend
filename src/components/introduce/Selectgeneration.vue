@@ -38,14 +38,14 @@
             <div class="kind">
               <p>{{item.name}}</p>
               <p>{{item.kind}}</p>
-          </div>
+            </div>
           </div>
         </div>
       </div>
       <div class="wrapper-right">
         <div class="image">
           <div class="coffee">
-            <el-carousel height="500px" indicator-position="none" :interval="1000">
+            <el-carousel height="500px" indicator-position="none" :interval="1500">
               <el-carousel-item v-for="item in imgs" :key="item.index">
                 <img :src="item.src">
               </el-carousel-item>
@@ -129,8 +129,6 @@
         API.selectgeneration(param).then(result => {
             console.log(result)
             this.datas = result.data
-            // console.log(4,this.dataradar)
-            // this.drawOne(this.dataradar.datalegend,this.dataradar.data)
         })
       }
     },
@@ -144,7 +142,6 @@
       API.selectgeneration(param).then(result => {
           console.log(result)
           this.datas = result.data
-          // this.drawOne(this.dataradar.datalegend,this.dataradar.data)
       })
     }
   }
@@ -159,7 +156,6 @@
     
     .content {
       flex: 1;
-      margin: 40px;
       display: flex;
       justify-content: space-between;   
       border: 5px solid #fff;
@@ -169,6 +165,7 @@
 
         display: flex;
         flex-direction: column;
+        margin-left: 40px;
         .textarea {
           width:100%;
           height: 100%;
@@ -178,9 +175,9 @@
           flex-direction: column;
           justify-content: center;
           color: #fff;
-          padding: 0px 80px;
+          padding: 0px 20px;
           font-weight: 1200;
-          font-size: 30px;
+          font-size: 26px;
           border-radius: 20px;
 
           .kind {
