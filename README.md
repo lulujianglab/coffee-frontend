@@ -12,8 +12,8 @@
 
 * axios: 基于 Promise 的 HTTP 请求客户端，可同时在浏览器和 node.js 中使用
 
-* flex: 弹性布局，有别于之前的display+position+float布局，flex布局可以简便、完整、响应式地实现各种页面布局。通过给元素盒子设置一些属性，让元素盒子具有伸缩性
-* 
+* flex: 弹性布局，有别于之前的display+position+float布局，flex布局可以简便、完整、响应式地实现各种页面布局
+
 ## 项目结构
 
 ```
