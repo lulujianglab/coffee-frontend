@@ -124,10 +124,8 @@
     },
     watch: {
     　 newValue(val) {
-        console.log(val)
         let param ={select: val}
         API.selectgeneration(param).then(result => {
-            console.log(result)
             this.datas = result.data
         })
       }
@@ -140,7 +138,6 @@
     mounted() {
       let param ={select: this.account.valueKind}
       API.selectgeneration(param).then(result => {
-          console.log(result)
           this.datas = result.data
       })
     }

@@ -22,7 +22,7 @@
       }
     },
     methods: {
-      drawOne(data) {
+      drawOne(datas) {
         let myChartOne = this.$echarts.init(document.getElementById('myChartOne'))
         var geoCoordMap = {  
             "Zhengzhou": [113.65, 34.76],
@@ -42,6 +42,24 @@
             "Beijing": [116.46, 39.92],  
             "Shanghai": [121.48, 31.22],      
         }
+        let data = datas? datas:[
+            { name: "上海", value: 29},
+            { name: "南京", value: 80},
+            { name: "杭州", value: 56},
+            { name: "广州", value: 69},
+            { name: "深圳", value: 89},
+            { name: "福州", value: 20},
+            { name: "厦门", value: 30},
+            { name: "郑州", value: 10},
+            { name: "武汉", value: 80},
+            { name: "北京", value: 70},
+            { name: "大连", value: 50},
+            { name: "沈阳", value: 40},
+            { name: "天津", value: 40},
+            { name: "青岛", value: 60},
+            { name: "西安", value: 70},
+            { name: "成都", value: 10},
+        ]
         var convertData = function(data) {
             var res = [];
             for (var i = 0; i < data.length; i++) {

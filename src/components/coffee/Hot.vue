@@ -108,64 +108,7 @@
         //     index: 4,
         //     name: '抹茶拿铁',
         //     num:' 323,234'
-        // },{
-        //     active: false,
-        //     index: 5,
-        //     name: '抹茶拿铁',
-        //     num:' 323,234'
-        // },{
-        //     active: false,
-        //     index: 6,
-        //     name: '抹茶拿铁',
-        //     num:' 323,234'
-        // },{
-        //     active: false,
-        //     index: 7,
-        //     name: '抹茶拿铁',
-        //     num:' 323,234'
-        // },{
-        //     active: false,
-        //     index: 8,
-        //     name: '抹茶拿铁',
-        //     num:' 323,234'
-        // },{
-        //     active: false,
-        //     index: 9,
-        //     name: '抹茶拿铁',
-        //     num:' 323,234'
-        // },{
-        //     active: false,
-        //     index: 10,
-        //     name: '抹茶拿铁',
-        //     num:' 323,234'
-        // },{
-        //     active: false,
-        //     index: 11,
-        //     name: '抹茶拿铁',
-        //     num:' 323,234'
-        // },{
-        //     active: fasle,
-        //     index: 12,
-        //     name: '抹茶拿铁',
-        //     num:' 323,234'
         // }]
-        // dataradar: {
-        //     datalegend: ['白巧克力摩卡（不加奶油）','焦糖玛奇朵','热巧克力（不加奶油）'],
-        //     data: [
-        //         {
-        //             value : [11, 7, 0, 58, 15, 0.15],
-        //             name : '白巧克力摩卡（不加奶油）'
-        //         },
-        //         {
-        //             value : [7, 3.5, 0, 32, 10, 0.15],
-        //             name : '焦糖玛奇朵'
-        //         },
-        //         {
-        //             value : [6, 1.5, 2, 25, 9, 0.02],
-        //             name : '热巧克力（不加奶油）'
-        //         }
-        //     ]
-        // }
       }
     },
     methods: {
@@ -251,9 +194,7 @@
       console.log('value',this.account.value)
       let Beverage_category ={Beverage_category: this.account.value}
       API.hotradar(Beverage_category).then(result => {
-          console.log(result)
           this.dataradar = result.data
-          console.log(3,this.dataradar)
           this.drawOne(this.dataradar.datalegend,this.dataradar.data)
       }) 
     }

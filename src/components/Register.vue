@@ -147,12 +147,6 @@
       flex: 1;
       border: 5px solid #fff;
       margin: 40px;
-      //  display: flex;
-      // height: 100%;
-      // width: 100%;
-      // overflow: hidden;
-      // background: url('../assets/img-register/background.jpg') repeat;
-      // background-size: 100%;
 
       .mask {
         position: fixed;

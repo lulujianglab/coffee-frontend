@@ -53,12 +53,6 @@
               <router-view></router-view>
             </transition>
           </div>
-        <!-- </div> -->
-        <!-- <div class="content-bottom">
-          "Copyright"
-          <span class="anticon">©️</span>
-          "2018 联通集训第二期第八组出品"
-        </div> -->
       </div>
     </div>
   </div>
@@ -108,18 +102,6 @@
         }).then(() => {
           //确认
           that.loading = true;
-        //   API.logout().then(function (result) {
-        //     that.loading = false;
-        //     localStorage.removeItem('access-user');
-        //     that.$router.go('/login'); //用go刷新
-        //   }, function (err) {
-        //     that.loading = false;
-        //     that.$message.error({showClose: true, message: err.toString(), duration: 2000});
-        //   }).catch(function (error) {
-        //     that.loading = false;
-        //     console.log(error);
-        //     that.$message.error({showClose: true, message: '请求出现异常', duration: 2000});
-        //   });
         localStorage.removeItem('access-user');
         that.$router.go('/login'); //用go刷新
         }).catch(() => {});
