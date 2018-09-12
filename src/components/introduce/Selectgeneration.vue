@@ -148,7 +148,7 @@
   .wrapper {
     height: 100%;
     background: url('../../assets/img-chosegeneration/beijing.png') no-repeat;
-    background-size: 100% 100%;
+    background-size: auto 100%;
     display: flex;
     
     .content {

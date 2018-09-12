@@ -300,7 +300,7 @@
           width: 180px;
           height: 200px;
           background: url('../../assets/img-autogeneration/two.png') no-repeat;
-          background-size: contain;
+          background-size: 100% auto;
         }
         // .chart-three {
         //   flex: 1;

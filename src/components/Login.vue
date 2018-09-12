@@ -70,7 +70,7 @@
 //               that.$message.error({showClose: true, message: '请求出现异常', duration: 2000});
 //             });
               localStorage.setItem('access-user', this.account.username);
-              that.$router.push({path: '/'});
+              that.$router.push({path: '/introduce/autogeneration'});
           }
         });
       },
