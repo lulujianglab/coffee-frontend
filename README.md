@@ -11,11 +11,13 @@
 * vue-router：前端路由，用Vue.js + vue-router 创建单页应用(SPA)非常简单
 
 * axios: 基于 Promise 的 HTTP 请求客户端，可同时在浏览器和 node.js 中使用
-　　
+
+* flex: 弹性布局，有别于之前的display+position+float布局，flex布局可以简便、完整、响应式地实现各种页面布局
+
 ## 项目结构
 
 ```
-├── build  #webpack编译相关文件目录，一般不用动 
+├── build  #webpack编译相关文件目录
 ├── config  #配置目录
 │   ├────dev.env.js  #开发环境变量
 │   ├────index.js    #主配置文件
@@ -32,7 +34,7 @@
 │   ├───—bus.js  #公共通信组件
 │   └────main.js  #项目的核心文件
 ├── static  #开发模式下的静态资源目录
-├── index.html #首页入口文件，你可以添加一些 meta 信息或同统计代码啥的
+├── index.html #首页入口文件，添加一些meta信息或统计代码
 ├── package.json #项目配置文件
 └── README.md #项目的说明文档，markdown 格式
 ```
