@@ -39,13 +39,13 @@
     methods: {
         drawone() {
         	//最早记录时间
-            var base = +new Date(2010, 9, 1);
-            var oneDay = 24 * 3600 * 1000;
-            var date = [];
+            let base = +new Date(2010, 9, 1);
+            let oneDay = 24 * 3600 * 1000;
+            let date = [];
 					//访问量数据
-            var data = [(Math.random()+0.6) * 200];					
-            for (var i = 1; i < 3000; i++) {
-                var now = new Date(base += oneDay);
+            let data = [(Math.random()+0.6) * 200];					
+            for (let i = 1; i < 3000; i++) {
+                let now = new Date(base += oneDay);
                 date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'));
                 data.push(Math.round((Math.random() - 0.5) * 10 + data[i - 1]));
             }
@@ -305,15 +305,17 @@
         }
     },
     mounted() {
-        API.hotoccupy().then(result => {
-          this.drawthree(result.data)
-        })
-        API.hotmonth().then(result => {
-          console.log(result)
-          console.log(3,result.data)
-          this.drawfour(result.data.name,result.data.num)
-        })
+        // API.hotoccupy().then(result => {
+        //   this.drawthree(result.data)
+        // })
+        // API.hotmonth().then(result => {
+        //   console.log(result)
+        //   console.log(3,result.data)
+        //   this.drawfour(result.data.name,result.data.num)
+        // })
     this.drawone()
+    this.drawfour()
+    this.drawthree()
     }
   }
 </script>

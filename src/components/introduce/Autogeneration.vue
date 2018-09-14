@@ -35,7 +35,7 @@
     methods: {
       drawOne(name,data) {
         let myChartOne = this.$echarts.init(document.getElementById('myChartOne'))
-        var rawData = [
+        let rawData = [
           {name: '脂肪7g ', value:  7 },
           {name: '反式脂肪3.5g ', value:  3.5 },
           {name: ' 饱和脂肪0.2g ', value:  0.2 },
@@ -107,7 +107,7 @@
       },
       drawTwo(name,data) {
         let myChartTwo = this.$echarts.init(document.getElementById('myChartTwo'))
-        var rawData = [
+        let rawData = [
           {name: '脂肪 ', value:  4 },
           {name: '反式脂肪 ', value:  2 },
           {name: ' 饱和脂肪 ', value:  0.1 },
@@ -177,7 +177,7 @@
       },
       drawThree(name,data) {
         let myChartThree = this.$echarts.init(document.getElementById('myChartThree'))
-        var rawData = [
+        let rawData = [
           {name: '脂肪 ', value:  10 },
           {name: '反式脂肪 ', value:  5 },
           {name: ' 饱和脂肪 ', value:  0.3 },
@@ -249,17 +249,19 @@
     mounted() {
         let user = window.localStorage.getItem('access-user')
         let params ={user_name: user}
-        console.log('params',params)
-        API.autocomplete(params).then(result => {
-          console.log('result',result)
-          this.dataOne = result.dataone
-          this.dataTwo = result.datatwo
-          this.dataThree = result.datathree
+        // API.autocomplete(params).then(result => {
+        //   console.log('result',result)
+        //   this.dataOne = result.dataone
+        //   this.dataTwo = result.datatwo
+        //   this.dataThree = result.datathree
           
-          this.drawOne(this.dataOne.name,this.dataOne.data)
-          this.drawTwo(result.datatwo.name,this.dataTwo.data)
-          this.drawThree(result.datathree.name,this.dataThree.data)
-        })
+        //   this.drawOne(this.dataOne.name,this.dataOne.data)
+        //   this.drawTwo(result.datatwo.name,this.dataTwo.data)
+        //   this.drawThree(result.datathree.name,this.dataThree.data)
+        // })
+        this.drawOne(this.dataOne.name,this.dataOne.data)
+        this.drawTwo()
+        this.drawThree()
       
     }
   }

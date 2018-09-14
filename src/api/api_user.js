@@ -14,15 +14,6 @@ export default {
   // logout: params => {
   //   return API.GET('/api/v1/users/logout', params)
   // },
-  // //修改个人信息
-  // changeProfile: params => {
-  //   return API.PATCH('/api/v1/users/profile', params)
-  // },
-
-  // //查询获取user列表(通过page分页)
-  // findList: params => {
-  //   return API.GET('/api/v1/users', params)
-  // },
 
   test: params => {
     return API.GET('/api/check_is_user/', params)

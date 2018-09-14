@@ -24,7 +24,7 @@
     methods: {
       drawOne(datas) {
         let myChartOne = this.$echarts.init(document.getElementById('myChartOne'))
-        var geoCoordMap = {  
+        let geoCoordMap = {  
             "Zhengzhou": [113.65, 34.76],
             "Fuzhou": [119.3, 26.08],
             "Xiamen": [118.1, 24.46],
@@ -43,24 +43,24 @@
             "Shanghai": [121.48, 31.22],      
         }
         let data = datas? datas:[
-            { name: "上海", value: 29},
-            { name: "南京", value: 80},
-            { name: "杭州", value: 56},
-            { name: "广州", value: 69},
-            { name: "深圳", value: 89},
-            { name: "福州", value: 20},
-            { name: "厦门", value: 30},
-            { name: "郑州", value: 10},
-            { name: "武汉", value: 80},
-            { name: "北京", value: 70},
-            { name: "大连", value: 50},
-            { name: "沈阳", value: 40},
-            { name: "天津", value: 40},
-            { name: "青岛", value: 60},
-            { name: "西安", value: 70},
-            { name: "成都", value: 10},
+            { name: "Zhengzhou", value: 10},
+            { name: "Fuzhou", value: 20},
+            { name: "Xiamen", value: 30},
+            { name: "Shenyang", value: 89},
+            { name: "Dalian", value: 50},
+            { name: "Qingdao", value: 60},
+            { name: "Xi'an", value: 70},
+            { name: "Nanjing", value: 80},
+            { name: "Wuhan", value: 80},
+            { name: "Tianjin", value: 40},
+            { name: "Hangzhou", value: 56},
+            { name: "Chengdu", value: 10},
+            { name: "Guangzhou", value: 69},
+            { name: "Shenyang", value: 40},
+            { name: "Beijing", value: 70},
+            { name: "Shanghai", value: 29}
         ]
-        var convertData = function(data) {
+        let convertData = function(data) {
             var res = [];
             for (var i = 0; i < data.length; i++) {
                 var geoCoord = geoCoordMap[data[i].name];
@@ -74,7 +74,7 @@
             return res;
         }
 
-        var convertedData = [
+        let convertedData = [
             convertData(data),
             convertData(data.sort(function(a, b) {
                 return b.value - a.value;
@@ -84,12 +84,12 @@
             return a.value - b.value;
         })
 
-        var selectedItems = [];
-        var categoryData = [];
-        var barData = [];
+        let selectedItems = [];
+        let categoryData = [];
+        let barData = [];
         //   var maxBar = 30;
-        var sum = 0;
-        var count = data.length;
+        let sum = 0;
+        let count = data.length;
         for (var i = 0; i < data.length; i++) {
             categoryData.push(data[i].name);
             barData.push(data[i].value);
@@ -157,11 +157,10 @@
             },
             geo: {
                 map: 'china',
-                left: '0',
-                top: '10%',
-                right: '25%',
+                left: '150',
+                right: '42%',
                 center: [117.98561551896913, 31.205000490896193],
-                zoom: 0.9,
+                zoom: 1.4,
                 label: {
                     emphasis: {
                         show: false
@@ -182,9 +181,9 @@
                 trigger: 'item'
             },
             grid: {
-                right: 40,
+                right: 0.5,
                 top: 100,
-                bottom: 80,
+                bottom: 50,
                 width: '30%'
             },
             xAxis: {
@@ -301,18 +300,18 @@
         })
 
         function renderBrushed(params) {
-            var mainSeries = params.batch[0].selected[0];
+            let mainSeries = params.batch[0].selected[0];
 
-            var selectedItems = [];
-            var categoryData = [];
-            var barData = [];
-            var maxBar = 30;
-            var sum = 0;
-            var count = 0;
-            for (var i = 0; i < mainSeries.dataIndex.length; i++) {
-                var rawIndex = mainSeries.dataIndex[i];
-                var dataItem = convertedData[0][rawIndex];
-                var pmValue = dataItem.value[2];
+            let selectedItems = [];
+            let categoryData = [];
+            let barData = [];
+            let maxBar = 30;
+            let sum = 0;
+            let count = 0;
+            for (let i = 0; i < mainSeries.dataIndex.length; i++) {
+                let rawIndex = mainSeries.dataIndex[i];
+                let dataItem = convertedData[0][rawIndex];
+                let pmValue = dataItem.value[2];
 
                 sum += pmValue;
                 count++;
@@ -325,7 +324,7 @@
                 return a.value - b.value;
             });
 
-            for (var i = 0; i < Math.min(selectedItems.length, maxBar); i++) {
+            for (let i = 0; i < Math.min(selectedItems.length, maxBar); i++) {
                 categoryData.push(selectedItems[i].name);
                 barData.push(selectedItems[i].value[2]);
             }
@@ -354,10 +353,11 @@
       }  
     },
     mounted() {
-        API.area().then(result => {
-            console.log(result)
-            this.drawOne(result.data)
-        })
+        // API.area().then(result => {
+        //     console.log(result)
+        //     this.drawOne(result.data)
+        // })
+        this.drawOne()
     }
   }
 </script>

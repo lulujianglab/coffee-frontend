@@ -176,21 +176,18 @@
      
     },
     mounted() {
-        API.agenum().then(result => {
-          this.drawOne(result.data.age,result.data.name,result.data.num)
-        })
-        API.mannum().then(result => {
-          console.log(result[1],result[0])
-          this.drawTwo(result[1].male.name,result[1].male.data)
-          this.drawThree(result[0].female.name,result[0].female.data)
-        })
-        // API.womannum().then(result => {
-        //   console.log(result)
-        //   console.log(3,result.data)
-        //   this.drawThree(result.name,result.data)
+        // API.agenum().then(result => {
+        //   this.drawOne(result.data.age,result.data.name,result.data.num)
         // })
-        // this.drawTwo()
-        // this.drawThree()
+        // API.mannum().then(result => {
+        //   console.log(result[1],result[0])
+        //   this.drawTwo(result[1].male.name,result[1].male.data)
+        //   this.drawThree(result[0].female.name,result[0].female.data)
+        // })
+
+        this.drawOne()
+        this.drawTwo()
+        this.drawThree()
     }
   }
 </script>

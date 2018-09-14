@@ -114,8 +114,8 @@
           {index:3, src: require('../../../static/img3.png')}
         ],
 
-        // datas: [{ name:'黑咖啡',kind: '加奶'},{ name:'白咖啡',kind: '不加奶'}]
-        datas: []
+        datas: [{ name:'黑咖啡',kind: '加奶'},{ name:'白咖啡',kind: '不加奶'}]
+        // datas: []
       }
     },
     methods: {
@@ -137,9 +137,9 @@
     },
     mounted() {
       let param ={select: this.account.valueKind}
-      API.selectgeneration(param).then(result => {
-          this.datas = result.data
-      })
+      // API.selectgeneration(param).then(result => {
+      //     this.datas = result.data
+      // })
     }
   }
 </script>
@@ -148,7 +148,7 @@
   .wrapper {
     height: 100%;
     background: url('../../assets/img-chosegeneration/beijing.png') no-repeat;
-    background-size: auto 100%;
+    background-size: 100% 100%;
     display: flex;
     
     .content {

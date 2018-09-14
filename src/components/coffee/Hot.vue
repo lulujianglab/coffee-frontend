@@ -193,10 +193,11 @@
 
       console.log('value',this.account.value)
       let Beverage_category ={Beverage_category: this.account.value}
-      API.hotradar(Beverage_category).then(result => {
-          this.dataradar = result.data
-          this.drawOne(this.dataradar.datalegend,this.dataradar.data)
-      }) 
+    //   API.hotradar(Beverage_category).then(result => {
+    //       this.dataradar = result.data
+    //       this.drawOne(this.dataradar.datalegend,this.dataradar.data)
+    //   }) 
+      this.drawOne()
     }
   }
 </script>
