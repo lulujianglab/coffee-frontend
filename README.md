@@ -1,6 +1,6 @@
-# vue-frontend
+# coffee-frontend
 
-> 一个基于vuejs2.0和element-ui搭建的用户咖啡推荐系统
+> 基于vuejs2.0、element-ui和echarts实现的用户咖啡推荐系统
 
 ## 相关技术
 
@@ -82,3 +82,5 @@ Your application is running here: http://localhost:8080
  > 2017-09-10
  >> 1.与后端完成所有的接口对接  
  >> 2.其它调整            
+ 
+ [demo演示](https://pan.baidu.com/s/1GFIEpIw6vy_iMpxSVcY2Pg)
