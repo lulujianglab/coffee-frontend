@@ -20,7 +20,6 @@
 <script>
   import {bus} from '../../bus.js'
   import API from '../../api/api_user'
-  import avatar from '../../assets/avatar.gif'
   export default {
     created(){      
 
@@ -269,7 +268,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   .wrapper {
-    background: url('../../assets/img-autogeneration/three.png');
+    background: url('/static/img-autogeneration/three.png');
     background-size: 100% auto;
     display: flex;
     // justify-content: space-between;
@@ -301,7 +300,7 @@
         .image {
           width: 180px;
           height: 200px;
-          background: url('../../assets/img-autogeneration/two.png') no-repeat;
+          background: url('/staic/img-autogeneration/two.png') no-repeat;
           background-size: 100% auto;
         }
         // .chart-three {

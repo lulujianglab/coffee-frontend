@@ -3,7 +3,7 @@
     <div class="wrapper-left">
       <div class="menu-title">
         <a href="#">
-          <img src="../assets/logo.png"  @click.prevent="collapse">
+          <img src="static/logo.png"  @click.prevent="collapse">
           <h1 v-show="!collapsed">咖啡智能推荐系统</h1>
         </a>
       </div>

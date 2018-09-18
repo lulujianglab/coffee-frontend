@@ -10,7 +10,6 @@
 <script>
   import {bus} from '../../bus.js'
   import API from '../../api/api_user'
-  import avatar from '../../assets/avatar.gif'
   import china from 'echarts/map/js/china'
   export default {
     created(){
@@ -365,7 +364,7 @@
 <style scoped lang="scss">
   .wrapper {
     padding: 70px 40px 50px;
-    background: url('../../assets/img-area/two.png') no-repeat;
+    background: url('/static/img-area/two.png') no-repeat;
     background-size: 100% auto;
   }
 </style>

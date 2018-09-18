@@ -34,7 +34,7 @@ import API from '../api/api_user.js';
 
 <style scoped lang="scss">
   .wrapper {
-    background: url('../assets/img-homepage/qt.png') no-repeat;
+    background: url('/static/img-homepage/qt.png') no-repeat;
     background-size: auto 100%;
   }
 </style>

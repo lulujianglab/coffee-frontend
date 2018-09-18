@@ -138,7 +138,7 @@
 <style lang="scss" scoped>
     .wrapper {
       height: 100%;
-      background: url('../assets/img-register/zc.png') repeat;
+      background: url('/static/img-register/zc.png') repeat;
       background-size: 100% auto;
       display: flex;
      
@@ -164,7 +164,7 @@
           width: 500px;
           height: 600px;
           
-          background: url('../assets/img-register/image.png') no-repeat;
+          background: url('/static/img-register/image.png') no-repeat;
           background-size: 100% auto;
 
           display: flex;

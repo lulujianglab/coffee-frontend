@@ -84,7 +84,7 @@
 <style lang="scss" scoped>
   .wrapper {
     height: 100%;
-    background: url('../assets/img-login/denglu.png') repeat;
+    background: url('/static/img-login/denglu.png') repeat;
     background-size: 100% auto;  
     display: flex;
   }

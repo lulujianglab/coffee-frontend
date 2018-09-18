@@ -60,7 +60,6 @@
 <script>
   import {bus} from '../../bus.js'
   import API from '../../api/api_user'
-  import avatar from '../../assets/avatar.gif'
   export default {
     created(){
       
@@ -147,7 +146,7 @@
 <style scoped lang="scss">
   .wrapper {
     height: 100%;
-    background: url('../../assets/img-chosegeneration/beijing.png') no-repeat;
+    background: url('/static/img-chosegeneration/beijing.png') no-repeat;
     background-size: 100% 100%;
     display: flex;
     
@@ -193,7 +192,7 @@
         .image {
             width: 500px;
             height: 500px;
-            background: url('../../assets/img-chosegeneration/background.png') no-repeat;
+            background: url('/static/img-chosegeneration/background.png') no-repeat;
             background-size: cover;
             position: relative;
 

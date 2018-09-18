@@ -22,7 +22,6 @@
 <script>
   import {bus} from '../../bus.js'
   import API from '../../api/api_user'
-  import avatar from '../../assets/avatar.gif'
   import echarts from 'echarts'
   export default {
     created(){
@@ -322,7 +321,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   .wrapper {
-    background: url('../../assets/img-sell/three.png') no-repeat;
+    background: url('/static/img-sell/three.png') no-repeat;
     background-size: 100% auto;
     display: flex;
     justify-content: space-between;
