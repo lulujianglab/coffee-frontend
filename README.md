@@ -56,7 +56,7 @@
   
   Your application is running here: http://localhost:8080
 
-4) 正式环境编译命令
+3) 正式环境编译命令
 
 > npm run build
 
