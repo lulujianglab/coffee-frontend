@@ -52,9 +52,9 @@
 
 > npm run dev
 
-3) 显示如下内容说明本地启动成功
+  显示如下内容说明本地启动成功
   
-Your application is running here: http://localhost:8080
+  Your application is running here: http://localhost:8080
 
 4) 正式环境编译命令
 
@@ -75,11 +75,11 @@ Your application is running here: http://localhost:8080
  > 2018-09-07
  >> 1.跑通静态页面逻辑，修复部分bug            
  
- > 2017-09-08
+ > 2018-09-08
  >> 1.对接后端接口       
  >> 2.代码优化         
  
- > 2017-09-10
+ > 2018-09-10
  >> 1.与后端完成所有的接口对接  
  >> 2.其它调整            
  
