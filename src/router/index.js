@@ -9,11 +9,11 @@ import Area from '@/components/coffee/Area'
 import Autogeneration from '@/components/introduce/Autogeneration'
 import Selectgeneration from '@/components/introduce/Selectgeneration'
 import Dashboard from '@/components/Dashboard'
-// import Register from '@/components//Register'
+// import Register from '@/components/Register'
 
 // 懒加载方式，当路由被访问的时候才加载对应组件
 const Login = resolve => require(['@/components/Login'], resolve)
-const Register = resolve => require(['@/components//Register'], resolve)
+const Register = resolve => require(['@/components/Register'], resolve)
 
 Vue.use(Router)
 
